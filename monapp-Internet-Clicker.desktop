@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=monapp-Internet-Clicker
+Comment=Un jeu de clicker basé sur les mèmes d'Internet
+Exec=/nfs/homes/amblanch/Documents/clicker_meme/monapp-Internet-Clicker
+Path=/nfs/homes/amblanch/Documents/clicker_meme
+Icon=~/.local/share/icons/hicolor/256x256/apps/monapp-Internet-Clicker.png
+Terminal=false
+Type=Application
+Categories=Game;
