@@ -6,11 +6,11 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 17:28:37 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/04/02 18:45:29 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 09:44:15 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "graph.h"
+#include "../INCLUDE/graph.h"
 
 void	process_rgb(t_all *all, t_status_render status)
 {

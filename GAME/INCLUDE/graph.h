@@ -6,7 +6,7 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 09:54:05 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/02 17:17:14 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 09:48:21 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ SDL_Texture	*find_texture(t_texture *texture, char *name);
 SDL_Rect	*find_rect(t_rect *rect, char *name);
 
 
-void deleteNode(t_rect** lst, char *name);
+void	deleteNode(t_rect** lst, char *name);
 void	ft_free_textures(t_texture *textures);
 void	ft_free_rec(t_rect *rectangles);
 

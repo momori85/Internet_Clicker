@@ -6,11 +6,11 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/01 17:29:14 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 10:28:13 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "graph.h"
+# include "../INCLUDE/graph.h"
 
 void	init_rect_for_texture(t_all *all)
 {
@@ -31,17 +31,17 @@ void	init_rect_for_texture(t_all *all)
 
 void	init_texture(t_all *all)
 {
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/loading.png", all->renderer), "loading"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/cat_left.png", all->renderer), "cat_left"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/cat_right.png", all->renderer), "cat_right"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/loading_bar.png", all->renderer), "loading_bar"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/meme.png", all->renderer), "meme"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/meme1.png", all->renderer), "meme1"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/meme2.png", all->renderer), "meme2"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/meme3.png", all->renderer), "meme3"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/meme4.png", all->renderer), "meme4"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/meme5.png", all->renderer), "meme5"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/meme6.png", all->renderer), "meme6"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/play.png", all->renderer), "play"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("loading/tilte.png", all->renderer), "title"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/loading.png", all->renderer), "loading"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/cat_left.png", all->renderer), "cat_left"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/cat_right.png", all->renderer), "cat_right"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/loading_bar.png", all->renderer), "loading_bar"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/meme.png", all->renderer), "meme"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/meme1.png", all->renderer), "meme1"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/meme2.png", all->renderer), "meme2"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/meme3.png", all->renderer), "meme3"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/meme4.png", all->renderer), "meme4"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/meme5.png", all->renderer), "meme5"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/meme6.png", all->renderer), "meme6"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/play.png", all->renderer), "play"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/tilte.png", all->renderer), "title"));
 }

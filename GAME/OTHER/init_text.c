@@ -6,11 +6,11 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:15:01 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/01 14:40:32 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 09:44:49 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "graph.h"
+#include "../INCLUDE/graph.h"
 
 TTF_Font	*init_text(SDL_Renderer *renderer, SDL_Window *window)
 {

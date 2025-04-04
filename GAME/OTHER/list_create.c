@@ -6,11 +6,11 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 14:32:26 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/01 17:29:14 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 09:44:53 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "graph.h"
+# include "../INCLUDE/graph.h"
 
 void	ft_lstadd_back_rect(t_rect **lst, t_rect *new)
 {

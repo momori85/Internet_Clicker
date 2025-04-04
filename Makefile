@@ -3,22 +3,34 @@ CC=cc
 
 NAME=monapp-Internet-Clicker
 
-SRC = main.c load_texture.c ft_find_texture.c list_create.c loading_loop.c init_rect_for_texture.c init_text.c ft_process_screens.c ft_free.c
+LOADING = LOADING/loading_loop.c \
+          LOADING/ft_process_screens.c
+
+OTHER = OTHER/ft_free.c \
+        OTHER/init_text.c \
+        OTHER/list_create.c
+
+TEXTURE = TEXTURE/ft_find_texture.c \
+          TEXTURE/init_rect_for_texture.c \
+          TEXTURE/load_texture.c
+
+ALL_FILE = main.c $(TEXTURE) $(LOADING) $(OTHER)
+SRC = $(addprefix GAME/, $(ALL_FILE))
 
 RM=rm -f
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:%.c=.obj/%.o)
 
-CFLAGS= -Wall -Wextra -Werror -I$(HOME)/.local/include -g
-
-LDLIBS= -L$(HOME)/.local/lib -lSDL2_mixer -lSDL2 -lSDL2_ttf -lSDL2_image
+CFLAGS = -Wall -Wextra -Werror -I$(HOME)/.local/include -g -IGAME/INCLUDE
+LDLIBS = -L$(HOME)/.local/lib -lSDL2_mixer -lSDL2 -lSDL2_ttf -lSDL2_image
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(LDLIBS)
 
-%.o: %.c
+.obj/%.o: %.c
+	@mkdir -p $(dir $@)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
@@ -28,6 +40,8 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
 
 # Variables
 DESKTOP_INSTALL_PATH = ~/.local/share/applications

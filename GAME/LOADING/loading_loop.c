@@ -6,11 +6,11 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:23:33 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/03 15:26:43 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 09:44:28 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "graph.h"
+#include "../INCLUDE/graph.h"
 
 void	loading_loop_event(t_all *all)
 {

@@ -6,11 +6,11 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 14:57:30 by amblanch          #+#    #+#             */
-/*   Updated: 2025/03/28 15:06:52 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 09:45:00 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "graph.h"
+#include "../INCLUDE/graph.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

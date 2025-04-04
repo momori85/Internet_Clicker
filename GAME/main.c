@@ -6,11 +6,11 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/02 17:52:54 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 09:45:13 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "graph.h"
+# include "INCLUDE/graph.h"
 
 int isButtonClicked(SDL_Rect  rect, int mouseX, int mouseY)
 {

@@ -6,11 +6,11 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 15:40:27 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/04/02 17:32:19 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 09:44:43 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "graph.h"
+#include "../INCLUDE/graph.h"
 
 void	ft_free_textures(t_texture *textures)
 {
