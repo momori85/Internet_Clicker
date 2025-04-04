@@ -6,7 +6,7 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 17:28:37 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/04/04 09:44:15 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 14:23:55 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	process_rgb(t_all *all, t_status_render status)
 			y++;
 		}
 	}
-	if (status == MAIN_SCREEN || all->button == PLAY_BTN_DOWN)
+	if (all->button == PLAY_BTN_DOWN)
 	{
 		Uint8 final_r = 0x85;
 		Uint8 final_g = 0x67;
@@ -69,6 +69,8 @@ void	process_rgb(t_all *all, t_status_render status)
 		if (t < 1.0f)
 			t += transition_speed;
 	}
+	if (transition_speed == 1)
+		all->render = MAIN_SCREEN;
 }
 
 void	process_screen(t_all *all, t_status_render status)

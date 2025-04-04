@@ -10,11 +10,14 @@ OTHER = OTHER/ft_free.c \
         OTHER/init_text.c \
         OTHER/list_create.c
 
+MENU = MENU/event_loop.c \
+		MENU/menu_loop.c
+
 TEXTURE = TEXTURE/ft_find_texture.c \
           TEXTURE/init_rect_for_texture.c \
           TEXTURE/load_texture.c
 
-ALL_FILE = main.c $(TEXTURE) $(LOADING) $(OTHER)
+ALL_FILE = main.c $(TEXTURE) $(LOADING) $(OTHER) $(MENU)
 SRC = $(addprefix GAME/, $(ALL_FILE))
 
 RM=rm -f

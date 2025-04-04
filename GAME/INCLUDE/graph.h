@@ -6,7 +6,7 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 09:54:05 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/04 09:48:21 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 14:27:09 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,14 @@ void	init_texture(t_all *all);
 
 TTF_Font	*init_text(SDL_Renderer *renderer, SDL_Window *window);
 void	craete_text(TTF_Font *font, SDL_Renderer *renderer, SDL_Window *window, char *text, int pos_x, int pos_y);
-void	loading_loop(t_all *all);
+
+void	load_screen_loop(t_all *all, int offset);
+
+void	init_texture_menu(t_all *all);
+void	init_rect_for_texture_menu(t_all *all);
+
+void	menu_loop(t_all *all);
+void	menu_loop_event(t_all *all);
+
 
 #endif

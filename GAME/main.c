@@ -6,7 +6,7 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/04 09:45:13 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 14:25:57 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static uint8_t	init_vars(t_all *all)
 	all->status = RUNNING;
 	all->button = PLAY_BTN_UP;
 	all->render = LOAD_SCREEN;
+	all->menu = NONE;
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) != 0)
 		exit (1);
 	if (TTF_Init() == -1)
@@ -43,6 +44,42 @@ static uint8_t	init_vars(t_all *all)
 	return (0);
 }
 
+void	main_loop(t_all	*all)
+{
+	Uint32			start_time;
+	Uint32			frame_duration;
+	int				offset;
+
+	offset = 1;
+	while (all->status == RUNNING && all->render != MAIN_SCREEN)
+	{
+		start_time = SDL_GetTicks();
+		switch (all->render)
+		{
+			case LOAD_SCREEN:
+				load_screen_loop(all, offset);
+				break ;
+			case MAIN_SCREEN:
+				menu_loop(all);
+				break ;
+			case EDGE_SCREEN:
+				break ;
+			case CHROME_SCREEN:
+				break ;
+			case OPERA_SCREEN:
+				break ;
+			case OPERAGX_SCREEN:
+				break ;
+			case ERR:
+				exit (1);
+		}
+		SDL_RenderPresent(all->renderer);
+		frame_duration = SDL_GetTicks() - start_time;
+		if (frame_duration < 1000 / 60)
+			SDL_Delay((1000 / 60) - frame_duration);
+	}
+}
+
 int	main(void)
 {
 	t_all			all;
@@ -51,7 +88,7 @@ int	main(void)
 		return (1);
 	init_rect_for_texture(&all);
 	init_texture(&all);
-	loading_loop(&all);
+	main_loop(&all);
 	ft_free_textures(all.texture);
 	ft_free_rec(all.rect);
 	SDL_DestroyRenderer(all.renderer);

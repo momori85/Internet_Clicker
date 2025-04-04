@@ -6,7 +6,7 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:23:33 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/04 09:44:28 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 14:22:59 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,8 @@ static int16_t	ft_update_pos(t_all *all, int offset)
 	return (tmp->y);
 }
 
-void	load_screen_loop(t_all *all, Uint32 start_time, int offset)
+void	load_screen_loop(t_all *all, int offset)
 {
-	Uint32		frame_duration;
-
 	loading_loop_event(all);
 	SDL_RenderClear(all->renderer);
 	if (all->button == PLAY_BTN_DOWN && all->render == LOAD_SCREEN)
@@ -107,47 +105,13 @@ void	load_screen_loop(t_all *all, Uint32 start_time, int offset)
 			deleteNode(&all->rect, "meme6");
 			deleteNode(&all->rect, "cat_left");
 			deleteNode(&all->rect, "cat_right");
-			all->render = MAIN_SCREEN;
+			init_texture_menu(all);
+			init_rect_for_texture_menu(all);
 		}
 		if (offset < 10)
 			offset++;
 		offset += 1;
 	}
 	process_screen(all, all->render);
-	SDL_RenderPresent(all->renderer);
-	frame_duration = SDL_GetTicks() - start_time; 
-	if (frame_duration < 1000 / 60)
-		SDL_Delay((1000 / 60) - frame_duration);
 }
 
-
-void	loading_loop(t_all	*all)
-{
-	Uint32			start_time = 0;
-	int				offset;
-
-	offset = 1;
-	while (all->status == RUNNING && all->render != MAIN_SCREEN)
-	{
-		start_time = SDL_GetTicks();
-		switch (all->render)
-		{
-			case LOAD_SCREEN:
-				load_screen_loop(all, start_time, offset);
-				break ;
-			case MAIN_SCREEN:
-				load_screen_loop(all, start_time, offset);
-				break ;
-			case EDGE_SCREEN:
-				break ;
-			case CHROME_SCREEN:
-				break ;
-			case OPERA_SCREEN:
-				break ;
-			case OPERAGX_SCREEN:
-				break ;
-			case ERR:
-				exit (1);
-		}
-	}
-}

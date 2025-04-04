@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlahonta <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/04/02 18:57:35 by mlahonta         ###   ########.fr       */
+/*   Updated: 2025/04/04 14:14:15 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@ typedef enum __attribute__((__packed__)) e_statusbtn
 	PLAY_BTN_UP,
 	PLAY_BTN_DOWN
 }	t_status_btn;
+
+typedef enum __attribute__((__packed__)) e_status_menu
+{
+	NONE,
+	PLAY_BTN,
+	SETTINGS_BTN,
+	SAVE_BTN,
+	EXIT_BTN,
+}	t_status_menu;
 
 typedef enum __attribute__((__packed__)) e_statusrender
 {
@@ -56,6 +65,7 @@ typedef struct s_all
 	t_texture			*texture;
 	t_status			status;
 	t_status_btn		button;
+	t_status_menu		menu;
 	t_status_render		render;
 	SDL_Window			*window;
 	SDL_Renderer		*renderer;

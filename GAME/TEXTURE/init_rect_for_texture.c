@@ -6,7 +6,7 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/04 10:28:13 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/04/04 14:32:27 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,22 @@ void	init_texture(t_all *all)
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/meme6.png", all->renderer), "meme6"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/play.png", all->renderer), "play"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LOADING/tilte.png", all->renderer), "title"));
+}
+
+void	init_rect_for_texture_menu(t_all *all)
+{
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(750, 414, 572, 252, "exit_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(740, 414, 572, 252, "play_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(750, 414, 572, 252, "save_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(750, 414, 572, 252, "settings_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(597, 11, 572, 252, "title_menu"));
+}
+
+void	init_texture_menu(t_all *all)
+{
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/exit_bar.png", all->renderer), "exit_bar"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/play_bar.png", all->renderer), "play_bar"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/save_bar.png", all->renderer), "save_bar"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/settings_bar.png", all->renderer), "settings_bar"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/title.png", all->renderer), "title_menu"));
 }
