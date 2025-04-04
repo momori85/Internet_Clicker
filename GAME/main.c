@@ -51,13 +51,13 @@ void	main_loop(t_all	*all)
 	int				offset;
 
 	offset = 1;
-	while (all->status == RUNNING && all->render != MAIN_SCREEN)
+	while (all->status == RUNNING)
 	{
 		start_time = SDL_GetTicks();
 		switch (all->render)
 		{
 			case LOAD_SCREEN:
-				load_screen_loop(all, offset);
+				load_screen_loop(all, &offset);
 				break ;
 			case MAIN_SCREEN:
 				menu_loop(all);
@@ -71,7 +71,8 @@ void	main_loop(t_all	*all)
 			case OPERAGX_SCREEN:
 				break ;
 			case ERR:
-				exit (1);
+				all->status = STOP;
+				break ;
 		}
 		SDL_RenderPresent(all->renderer);
 		frame_duration = SDL_GetTicks() - start_time;

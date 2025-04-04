@@ -22,7 +22,8 @@ typedef enum __attribute__((__packed__)) e_status
 typedef enum __attribute__((__packed__)) e_statusbtn
 {
 	PLAY_BTN_UP,
-	PLAY_BTN_DOWN
+	PLAY_BTN_DOWN,
+	PLAY_DESTROY
 }	t_status_btn;
 
 typedef enum __attribute__((__packed__)) e_status_menu

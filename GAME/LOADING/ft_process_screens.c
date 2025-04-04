@@ -38,7 +38,7 @@ void	process_rgb(t_all *all, t_status_render status)
 			y++;
 		}
 	}
-	if (all->button == PLAY_BTN_DOWN)
+	if (all->button == PLAY_BTN_DOWN || all->button == PLAY_DESTROY)
 	{
 		Uint8 final_r = 0x85;
 		Uint8 final_g = 0x67;
@@ -68,15 +68,17 @@ void	process_rgb(t_all *all, t_status_render status)
 		}
 		if (t < 1.0f)
 			t += transition_speed;
+		if (t >= 0.90)
+		{
+			all->render = MAIN_SCREEN;
+		}
 	}
-	if (transition_speed == 1)
-		all->render = MAIN_SCREEN;
 }
 
 void	process_screen(t_all *all, t_status_render status)
 {
 	process_rgb(all, status);
-	if (status == LOAD_SCREEN)
+	if (status == LOAD_SCREEN && all->button != PLAY_DESTROY)
 	{
 		SDL_RenderCopy(all->renderer, find_texture(all->texture, "title"), NULL, find_rect(all->rect, "title"));
 		SDL_RenderCopy(all->renderer, find_texture(all->texture, "play"), NULL, find_rect(all->rect, "play"));
@@ -90,6 +92,4 @@ void	process_screen(t_all *all, t_status_render status)
 		SDL_RenderCopy(all->renderer, find_texture(all->texture, "cat_left"), NULL, find_rect(all->rect, "cat_left"));
 		SDL_RenderCopy(all->renderer, find_texture(all->texture, "cat_right"), NULL, find_rect(all->rect, "cat_right"));
 	}
-	if (status == MAIN_SCREEN)
-		return ;
 }

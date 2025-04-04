@@ -1,7 +1,7 @@
 
 CC=cc
 
-NAME=monapp-Internet-Clicker
+NAME=Internet-Clicker
 
 LOADING = LOADING/loading_loop.c \
           LOADING/ft_process_screens.c
@@ -58,9 +58,9 @@ $(ICON_INSTALL_PATH):
 	mkdir -p $(ICON_INSTALL_PATH)
 
 # Règle principale pour installer l'application et son icône
-APP_NAME = monapp-Internet-Clicker
+APP_NAME = Internet-Clicker
 EXEC_PATH = $(shell pwd)/$(APP_NAME)
-ICON_PATH = icon.png
+ICON_PATH = UTILITAIRE/icon.png
 DESKTOP_FILE = $(APP_NAME).desktop
 
 install: $(DESKTOP_INSTALL_PATH) $(ICON_INSTALL_PATH)
@@ -74,14 +74,15 @@ install: $(DESKTOP_INSTALL_PATH) $(ICON_INSTALL_PATH)
 	echo "Comment=Un jeu de clicker basé sur les mèmes d'Internet" >> $(DESKTOP_FILE)
 	echo "Exec=$(EXEC_PATH)" >> $(DESKTOP_FILE)
 	echo "Path=$(shell pwd)" >> $(DESKTOP_FILE)
-	echo "Icon=$(ICON_INSTALL_PATH)/$(APP_NAME).png" >> $(DESKTOP_FILE)
+	echo "Icon=$(APP_NAME)" >> $(DESKTOP_FILE)
 	echo "Terminal=false" >> $(DESKTOP_FILE)
 	echo "Type=Application" >> $(DESKTOP_FILE)
-	echo "Categories=Game;" >> $(DESKTOP_FILE)
+	echo "Categories=Utility;" >> $(DESKTOP_FILE)
 
 	# Installer le fichier .desktop
 	cp $(DESKTOP_FILE) $(DESKTOP_INSTALL_PATH)/
 	chmod +x $(DESKTOP_INSTALL_PATH)/$(DESKTOP_FILE)
 
 	# Mettre à jour la base de données des icônes
-	xdg-icon-resource forceupdate
+	xdg-icon-resource forceupdate --size 256
+

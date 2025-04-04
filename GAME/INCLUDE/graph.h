@@ -56,7 +56,7 @@ void	init_texture(t_all *all);
 TTF_Font	*init_text(SDL_Renderer *renderer, SDL_Window *window);
 void	craete_text(TTF_Font *font, SDL_Renderer *renderer, SDL_Window *window, char *text, int pos_x, int pos_y);
 
-void	load_screen_loop(t_all *all, int offset);
+void	load_screen_loop(t_all *all, int *offset);
 
 void	init_texture_menu(t_all *all);
 void	init_rect_for_texture_menu(t_all *all);

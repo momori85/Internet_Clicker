@@ -86,13 +86,13 @@ static int16_t	ft_update_pos(t_all *all, int offset)
 	return (tmp->y);
 }
 
-void	load_screen_loop(t_all *all, int offset)
+void	load_screen_loop(t_all *all, int *offset)
 {
 	loading_loop_event(all);
 	SDL_RenderClear(all->renderer);
-	if (all->button == PLAY_BTN_DOWN && all->render == LOAD_SCREEN)
+	if ((all->button == PLAY_BTN_DOWN) && all->render == LOAD_SCREEN)
 	{
-		if (ft_update_pos(all, offset) <= -1000)
+		if (all->button != PLAY_DESTROY && ft_update_pos(all, *offset) <= -1000)
 		{
 			deleteNode(&all->rect, "title");
 			deleteNode(&all->rect, "play");
@@ -107,10 +107,11 @@ void	load_screen_loop(t_all *all, int offset)
 			deleteNode(&all->rect, "cat_right");
 			init_texture_menu(all);
 			init_rect_for_texture_menu(all);
+			all->button = PLAY_DESTROY;
 		}
-		if (offset < 10)
-			offset++;
-		offset += 1;
+		if (*offset < 10)
+			(*offset)++;
+		*offset += 2;
 	}
 	process_screen(all, all->render);
 }
