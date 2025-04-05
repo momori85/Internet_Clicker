@@ -49,9 +49,13 @@ void	init_texture(t_all *all)
 void	init_rect_for_texture_menu(t_all *all)
 {
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(726, 856, 470, 105, "exit_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(880, 866, 162, 90, "text_exit"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(740, 414, 442, 105, "play_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(869, 424, 182, 90, "text_play"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(715, 705, 490, 105, "save_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(869, 715, 184, 90, "text_save"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(547, 560, 826, 105, "settings_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(787, 570, 346, 90, "text_settings"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(597, 11, 728, 309, "title_menu"));
 }
 
@@ -67,4 +71,12 @@ void	init_texture_menu(t_all *all)
 	SDL_SetTextureBlendMode(find_texture(all->texture, "settings_bar"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/title.png", all->renderer), "title_menu"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "title_menu"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/text_exit.png", all->renderer), "text_exit"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "text_exit"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/text_save.png", all->renderer), "text_save"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "text_save"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/text_play.png", all->renderer), "text_play"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "text_play"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/text_settings.png", all->renderer), "text_settings"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "text_settings"), SDL_BLENDMODE_BLEND);
 }

@@ -55,6 +55,14 @@ void	menu_loop(t_all *all)
 	SDL_RenderCopy(all->renderer, find_texture(all->texture, "save_bar"), NULL, find_rect(all->rect, "save_bar"));
 	SDL_SetTextureAlphaMod(find_texture(all->texture, "exit_bar"), alpha);
 	SDL_RenderCopy(all->renderer, find_texture(all->texture, "exit_bar"), NULL, find_rect(all->rect, "exit_bar"));
+	SDL_SetTextureAlphaMod(find_texture(all->texture, "text_play"), alpha);
+	SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_play"), NULL, find_rect(all->rect, "text_play"));
+	SDL_SetTextureAlphaMod(find_texture(all->texture, "text_settings"), alpha);
+	SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_settings"), NULL, find_rect(all->rect, "text_settings"));
+	SDL_SetTextureAlphaMod(find_texture(all->texture, "text_save"), alpha);
+	SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_save"), NULL, find_rect(all->rect, "text_save"));
+	SDL_SetTextureAlphaMod(find_texture(all->texture, "text_exit"), alpha);
+	SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_exit"), NULL, find_rect(all->rect, "text_exit"));
 	if (alpha < 255)
 		alpha += 1;
 }
