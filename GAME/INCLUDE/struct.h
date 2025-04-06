@@ -70,7 +70,10 @@ typedef struct s_all
 	t_status_render		render;
 	SDL_Window			*window;
 	SDL_Renderer		*renderer;
+	Mix_Chunk			*click;
 	int					tmp;
+	int					alpha;
+	int					status_btn;
 }		t_all;
 
 #endif

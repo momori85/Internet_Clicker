@@ -21,6 +21,8 @@ int isButtonClicked(SDL_Rect  rect, int mouseX, int mouseY)
 static uint8_t	init_vars(t_all *all)
 {
 	all->rect = 0;
+	all->alpha = 0;
+	all->status_btn = -1;
 	all->tmp = SCREEN_HEIGHT / 2;
 	all->texture = 0;
 	all->status = RUNNING;
@@ -41,6 +43,11 @@ static uint8_t	init_vars(t_all *all)
 	all->renderer = SDL_CreateRenderer(all->window, -1, SDL_RENDERER_ACCELERATED);
 	if (!all->renderer)
 		exit(1);
+	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+	{
+		printf("Erreur Mix_OpenAudio: %s\n", Mix_GetError());
+		return 1;
+	}
 	return (0);
 }
 
@@ -51,6 +58,14 @@ void	main_loop(t_all	*all)
 	int				offset;
 
 	offset = 1;
+	Mix_Chunk* son1 = Mix_LoadWAV("GAME/MUSIQUE/menu.mp3");
+	all->click = Mix_LoadWAV("GAME/MUSIQUE/click.mp3");
+	if (!son1 || !all->click)
+	{
+        printf("Erreur de chargement du son: %s\n", Mix_GetError());
+        return ;
+    }
+	Mix_PlayChannel(-1, son1, 0);
 	while (all->status == RUNNING)
 	{
 		start_time = SDL_GetTicks();
@@ -79,6 +94,8 @@ void	main_loop(t_all	*all)
 		if (frame_duration < 1000 / 60)
 			SDL_Delay((1000 / 60) - frame_duration);
 	}
+	Mix_FreeChunk(son1);
+	Mix_FreeChunk(all->click);
 }
 
 int	main(void)

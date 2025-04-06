@@ -37,7 +37,10 @@ void	loading_loop_event(t_all *all)
 					mouse_x = event.button.x;
 					mouse_y = event.button.y;
 					if (all->render != MAIN_SCREEN && isButtonClicked(*find_rect(all->rect, "play"), mouse_x, mouse_y))
+					{
+						Mix_PlayChannel(-1, all->click, 0);
 						all->button = PLAY_BTN_DOWN;
+					}
 				}
 			}
 		}

@@ -34,10 +34,7 @@ void	menu_loop_event(t_all *all)
 			{
                 if (!mouse) 
 				{
-					mouse_x = event.button.x;
-					mouse_y = event.button.y;
-					if (all->render != MAIN_SCREEN && isButtonClicked(*find_rect(all->rect, "play"), mouse_x, mouse_y))
-						all->button = PLAY_BTN_DOWN;
+						
 				}
 			}
 		}
@@ -48,5 +45,17 @@ void	menu_loop_event(t_all *all)
                mouse = 0;
     	    }
 		}
+		mouse_x = event.button.x;
+		mouse_y = event.button.y;
+		if (isButtonClicked(*find_rect(all->rect, "text_play"), mouse_x, mouse_y))
+			all->status_btn = 1;
+		else if (isButtonClicked(*find_rect(all->rect, "text_settings"), mouse_x, mouse_y))
+			all->status_btn = 2;
+		else if (isButtonClicked(*find_rect(all->rect, "text_save"), mouse_x, mouse_y))
+			all->status_btn = 3;
+		else if (isButtonClicked(*find_rect(all->rect, "text_exit"), mouse_x, mouse_y))
+			all->status_btn = 4;
+		else
+			all->status_btn = 0;
 	}
 }
