@@ -17,7 +17,9 @@ TEXTURE = TEXTURE/ft_find_texture.c \
           TEXTURE/init_rect_for_texture.c \
           TEXTURE/load_texture.c
 
-ALL_FILE = main.c $(TEXTURE) $(LOADING) $(OTHER) $(MENU)
+LEVEL_ONE = LEVEL1/level1_loop.c
+
+ALL_FILE = main.c $(TEXTURE) $(LOADING) $(LEVEL_ONE) $(OTHER) $(MENU) 
 SRC = $(addprefix GAME/, $(ALL_FILE))
 
 RM=rm -f
@@ -25,7 +27,7 @@ RM=rm -f
 OBJ = $(SRC:%.c=.obj/%.o)
 
 CFLAGS = -Wall -Wextra -Werror -I$(HOME)/.local/include -g -IGAME/INCLUDE
-LDLIBS = -L$(HOME)/.local/lib -lSDL2_mixer -lSDL2 -lSDL2_ttf -lSDL2_image
+LDLIBS = -lm -L$(HOME)/.local/lib -lSDL2_mixer -lSDL2 -lSDL2_ttf -lSDL2_image
 
 all: $(NAME)
 
@@ -72,7 +74,7 @@ install: $(DESKTOP_INSTALL_PATH) $(ICON_INSTALL_PATH)
 	echo "Version=1.0" >> $(DESKTOP_FILE)
 	echo "Name=$(APP_NAME)" >> $(DESKTOP_FILE)
 	echo "Comment=Un jeu de clicker basé sur les mèmes d'Internet" >> $(DESKTOP_FILE)
-	echo "Exec=$(EXEC_PATH)" >> $(DESKTOP_FILE)
+	echo "Exec=$(shell pwd)/launch.sh" >> $(DESKTOP_FILE)
 	echo "Path=$(shell pwd)" >> $(DESKTOP_FILE)
 	echo "Icon=$(APP_NAME)" >> $(DESKTOP_FILE)
 	echo "Terminal=false" >> $(DESKTOP_FILE)

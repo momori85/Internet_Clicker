@@ -6,7 +6,7 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/04/04 14:14:15 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/05/27 13:45:50 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,17 @@ typedef struct s_rect
 	struct s_rect		*next;
 }		t_rect;
 
+typedef struct s_rectA
+{
+	char				*name;
+	SDL_Rect			rect;
+	int					alpha;
+	float				x, y;
+    float				vx, vy;
+    int					w, h;   
+	struct s_rectA		*next;
+}		t_rectA;
+
 typedef struct s_all
 {
 	t_rect				*rect;
@@ -74,6 +85,7 @@ typedef struct s_all
 	int					tmp;
 	int					alpha;
 	int					status_btn;
+	t_rectA				*clicker_rec;
 }		t_all;
 
 #endif

@@ -2,8 +2,8 @@
 Version=1.0
 Name=Internet-Clicker
 Comment=Un jeu de clicker basé sur les mèmes d'Internet
-Exec=/home/amaury/Documents/perso/Internet_Clicker/Internet-Clicker
-Path=/home/amaury/Documents/perso/Internet_Clicker
+Exec=/nfs/homes/amblanch/perso/Internet_Clicker/launch.sh
+Path=/nfs/homes/amblanch/perso/Internet_Clicker
 Icon=Internet-Clicker
 Terminal=false
 Type=Application

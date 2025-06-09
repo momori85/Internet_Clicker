@@ -6,7 +6,7 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 09:54:05 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/04 14:27:09 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/05/27 13:52:13 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,12 @@ void	init_rect_for_texture_menu(t_all *all);
 void	menu_loop(t_all *all);
 void	menu_loop_event(t_all *all);
 
+void	init_rect_for_texture_level1(t_all *all);
+void	init_texture_level1(t_all *all);
+
+void	level1_loop(t_all *all);
+
+void	ft_lstadd_back_rectA(t_rectA **lst, t_rectA *new);
+t_rectA	*ft_lstnew_rectA(int x, int y , int h, int w, float vx, float vy, char *name);
 
 #endif

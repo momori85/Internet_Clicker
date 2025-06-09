@@ -6,7 +6,7 @@
 /*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/04 14:25:57 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/05/26 13:27:57 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static uint8_t	init_vars(t_all *all)
 		SDL_Quit();
 		return (1);
 	}
-	all->window = SDL_CreateWindow("CLICKER Internet", 0, 0, 0, 0, SDL_WINDOW_FULLSCREEN_DESKTOP);
+	all->window = SDL_CreateWindow("CLICKER Internet", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, SDL_WINDOW_HIDDEN | SDL_WINDOW_FULLSCREEN_DESKTOP);
 	if (!all->window)
 		exit(1);
 	all->renderer = SDL_CreateRenderer(all->window, -1, SDL_RENDERER_ACCELERATED);
@@ -58,6 +58,7 @@ void	main_loop(t_all	*all)
 	int				offset;
 
 	offset = 1;
+	all->clicker_rec = NULL;
 	Mix_Chunk* son1 = Mix_LoadWAV("GAME/MUSIQUE/menu.mp3");
 	all->click = Mix_LoadWAV("GAME/MUSIQUE/click.mp3");
 	if (!son1 || !all->click)
@@ -66,6 +67,7 @@ void	main_loop(t_all	*all)
         return ;
     }
 	Mix_PlayChannel(-1, son1, 0);
+	SDL_ShowWindow(all->window);
 	while (all->status == RUNNING)
 	{
 		start_time = SDL_GetTicks();
@@ -78,6 +80,7 @@ void	main_loop(t_all	*all)
 				menu_loop(all);
 				break ;
 			case EDGE_SCREEN:
+				level1_loop(all);
 				break ;
 			case CHROME_SCREEN:
 				break ;
