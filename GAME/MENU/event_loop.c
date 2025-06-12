@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event_loop.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:41:31 by amblanch          #+#    #+#             */
-/*   Updated: 2025/05/20 16:23:14 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/12 21:01:26 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	menu_loop_event(t_all *all)
 	int mouse = 0;
 	int	mouse_x = 0;
 	int mouse_y = 0;
+	int width;
+    int height;
 	SDL_Event	event;
 
 	while (SDL_PollEvent(&event))
@@ -30,6 +32,17 @@ void	menu_loop_event(t_all *all)
 			if (event.key.keysym.sym == SDLK_ESCAPE)
 				all->status = STOP;
 		}
+		if (event.type == SDL_WINDOWEVENT)
+		{
+        	if (event.window.event == SDL_WINDOWEVENT_RESIZED)
+			{
+            	width = event.window.data1;
+            	height = event.window.data2;
+				SDL_GetWindowSize(all->window, &width, &height);
+				new_size_texture(all, width, height);
+				menu_loop_load_texture(all);
+			}
+        }
 		if (event.type == SDL_MOUSEBUTTONDOWN)
 		{
             if (event.button.button == SDL_BUTTON_LEFT)
@@ -41,6 +54,8 @@ void	menu_loop_event(t_all *all)
 						all->render = EDGE_SCREEN;
 						init_rect_for_texture_level1(all);
 						init_texture_level1(all);
+						SDL_GetWindowSize(all->window, &width, &height);
+						new_size_texture(all, width, height);
 					}
 					if (isButtonClicked(*find_rect(all->rect, "text_settings"), mouse_x, mouse_y))
 					{

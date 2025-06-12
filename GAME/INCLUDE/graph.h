@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graph.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 09:54:05 by amblanch          #+#    #+#             */
-/*   Updated: 2025/05/27 13:52:13 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/12 20:50:12 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,8 @@ void	level1_loop(t_all *all);
 
 void	ft_lstadd_back_rectA(t_rectA **lst, t_rectA *new);
 t_rectA	*ft_lstnew_rectA(int x, int y , int h, int w, float vx, float vy, char *name);
+
+void	new_size_texture(t_all *all, int width, int height);
+void	menu_loop_load_texture(t_all *all);
 
 #endif

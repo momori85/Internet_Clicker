@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_create.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 14:32:26 by amblanch          #+#    #+#             */
-/*   Updated: 2025/05/27 13:51:50 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/12 20:40:25 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ t_rect	*ft_lstnew_rect(int x, int y , int h, int w, char *name)
 		return (0);
 	list->next = NULL;
 	list->rect = rect;
+	list->origine = rect;
 	list->name = name;
 	return (list);
 }

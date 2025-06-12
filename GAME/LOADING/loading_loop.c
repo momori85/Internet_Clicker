@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   loading_loop.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:23:33 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/04 14:22:59 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/12 21:01:50 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,18 @@ void	loading_loop_event(t_all *all)
 			if (event.key.keysym.sym == SDLK_ESCAPE)
 				all->status = STOP;
 		}
+		if (event.type == SDL_WINDOWEVENT)
+		{
+        	if (event.window.event == SDL_WINDOWEVENT_RESIZED)
+			{
+            	int width = event.window.data1;
+            	int height = event.window.data2;
+				SDL_GetWindowSize(all->window, &width, &height);
+				new_size_texture(all, width, height);
+				SDL_RenderClear(all->renderer);
+				process_screen(all, all->render);
+			}
+        }
 		if (event.type == SDL_MOUSEBUTTONDOWN)
 		{
             if (event.button.button == SDL_BUTTON_LEFT)
@@ -110,6 +122,10 @@ void	load_screen_loop(t_all *all, int *offset)
 			deleteNode(&all->rect, "cat_right");
 			init_texture_menu(all);
 			init_rect_for_texture_menu(all);
+			int width;
+            int height;
+			SDL_GetWindowSize(all->window, &width, &height);
+			new_size_texture(all, width, height);
 			all->button = PLAY_DESTROY;
 		}
 		if (*offset < 10)

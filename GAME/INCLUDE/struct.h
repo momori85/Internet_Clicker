@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/05/27 13:45:50 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/12 20:33:10 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_rect
 {
 	char				*name;
 	SDL_Rect			rect;
+	SDL_Rect			origine;
 	struct s_rect		*next;
 }		t_rect;
 
@@ -85,6 +86,8 @@ typedef struct s_all
 	int					tmp;
 	int					alpha;
 	int					status_btn;
+	int					window_x;
+	int					window_y;
 	t_rectA				*clicker_rec;
 }		t_all;
 

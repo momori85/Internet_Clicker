@@ -3,24 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   menu_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:40:18 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/04 14:29:02 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/12 20:56:59 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INCLUDE/graph.h"
 
-void	menu_loop(t_all *all)
+void	menu_loop_load_texture(t_all *all)
 {
 	uint16_t		y;
 	Uint8			r;
 	Uint8			g;
 	Uint8			b;
 	float			shadow_factor;
-
-	menu_loop_event(all);
+	
 	SDL_RenderClear(all->renderer);
 	Uint8 final_r = 0x85;
 	Uint8 final_g = 0x67;
@@ -96,4 +95,10 @@ void	menu_loop(t_all *all)
 	}
 	if (all->alpha < 255)
 		all->alpha += 1;
+}
+
+void	menu_loop(t_all *all)
+{
+	menu_loop_event(all);
+	menu_loop_load_texture(all);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   level1_loop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:49:00 by amblanch          #+#    #+#             */
-/*   Updated: 2025/05/27 13:58:17 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/12 21:01:46 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ void	level1_loop_event(t_all *all)
 			if (event.key.keysym.sym == SDLK_ESCAPE)
 				all->status = STOP;
 		}
+		if (event.type == SDL_WINDOWEVENT)
+		{
+        	if (event.window.event == SDL_WINDOWEVENT_RESIZED)
+			{
+            	int width = event.window.data1;
+            	int height = event.window.data2;
+				SDL_GetWindowSize(all->window, &width, &height);
+				new_size_texture(all, width, height);
+			}
+        }
 		if (event.type == SDL_MOUSEBUTTONDOWN)
 		{
             if (event.button.button == SDL_BUTTON_LEFT)
@@ -38,6 +48,7 @@ void	level1_loop_event(t_all *all)
 				{
 					if (isButtonClicked(*find_rect(all->rect, "bg_level1"), mouse_x, mouse_y))
 					{
+						Mix_PlayChannel(-1, all->click, 0);
 						float angle = (rand() % 360) * 3.14 / 180.0f;
 						float rayon = 0 + rand() % 120;
 

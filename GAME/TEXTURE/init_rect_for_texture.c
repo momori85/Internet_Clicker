@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_rect_for_texture.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/05/27 13:37:30 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/12 20:56:16 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,29 @@ void	init_texture_level1(t_all *all)
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LEVEL_1/logo.png", all->renderer), "logo_fond_level1"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LEVEL_1/logo.png", all->renderer), "logo_level1"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "logo_level1"), SDL_BLENDMODE_BLEND);
+}
+
+void	new_size_texture(t_all *all, int width, int height)
+{
+	t_rect *tmp;
+	
+	tmp = all->rect;
+	if (height > 480 || width > 680)
+	{
+		while (tmp)
+		{
+			if (height > 480)
+			{
+				tmp->rect.y = tmp->origine.y * (100 * height / all->window_y) / 100;
+				tmp->rect.h = tmp->origine.h * (100 * height / all->window_y) / 100;
+			}
+			if (width > 680)
+			{
+				tmp->rect.x = tmp->origine.x * (100 * width / all->window_x) / 100;
+				tmp->rect.w = tmp->origine.w * (100 * width / all->window_x) / 100;
+			}
+			//printf ("tmp h = %d | w = %d\n", tmp->rect.y, tmp->rect.x);
+			tmp = tmp->next;
+		}
+	}
 }
