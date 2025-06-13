@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:40:18 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/13 21:51:34 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/13 22:26:09 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	menu_loop_load_texture(t_all *all)
 	}
 	if (all->menu == SETTINGS_BTN)
 	{
-		;
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "settings_theme"), NULL, find_rect(all->rect, "settings_theme"));
 	}
 	if (all->menu == SAVE_BTN)
 	{

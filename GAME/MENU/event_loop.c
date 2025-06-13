@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:41:31 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/13 21:53:50 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/13 22:18:55 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ void	menu_loop_event(t_all *all)
 			all->status = STOP;
 		if (event.type == SDL_KEYDOWN)
 		{
-			if (event.key.keysym.sym == SDLK_ESCAPE)
+			if (event.key.keysym.sym == SDLK_ESCAPE && all->menu == NONE)
 				all->status = STOP;
+			if (event.key.keysym.sym == SDLK_ESCAPE && all->menu == SETTINGS_BTN)
+				all->menu  = NONE;
+			if (event.key.keysym.sym == SDLK_ESCAPE && all->menu == SAVE_BTN)
+				all->menu = NONE;
 		}
 		if (event.type == SDL_WINDOWEVENT)
 		{

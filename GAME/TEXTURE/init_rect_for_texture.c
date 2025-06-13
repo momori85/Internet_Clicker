@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/13 21:42:16 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/13 22:25:27 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ void	init_rect_for_texture_menu(t_all *all)
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(547, 560, 826, 105, "settings_bar"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(787, 570, 346, 90, "text_settings"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(597, 11, 728, 309, "title_menu"));
+	//settings
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(40, 100, 826, 105, "settings_theme"));
+	//save
 }
 
 void	init_texture_menu(t_all *all)
@@ -86,6 +89,9 @@ void	init_texture_menu(t_all *all)
 	SDL_SetTextureBlendMode(find_texture(all->texture, "text_settings"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/text_settings_white.png", all->renderer), "text_settings_white"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "text_settings_white"), SDL_BLENDMODE_BLEND);
+	//settings
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/settings_theme.png", all->renderer), "settings_theme"));
+	//save
 }
 
 void	init_rect_for_texture_level1(t_all *all)
