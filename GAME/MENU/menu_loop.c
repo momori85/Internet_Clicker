@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:40:18 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/12 20:56:59 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/13 21:51:34 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,58 +43,69 @@ void	menu_loop_load_texture(t_all *all)
 		SDL_RenderDrawLine(all->renderer, 0, y, SCREEN_WIDTH, y);
 		y++;
 	}
-	SDL_SetTextureAlphaMod(find_texture(all->texture, "title_menu"), all->alpha);
-	SDL_RenderCopy(all->renderer, find_texture(all->texture, "title_menu"), NULL, find_rect(all->rect, "title_menu"));
-	SDL_SetTextureAlphaMod(find_texture(all->texture, "play_bar"), all->alpha);
-	SDL_RenderCopy(all->renderer, find_texture(all->texture, "play_bar"), NULL, find_rect(all->rect, "play_bar"));
-	SDL_SetTextureAlphaMod(find_texture(all->texture, "settings_bar"), all->alpha);
-	SDL_RenderCopy(all->renderer, find_texture(all->texture, "settings_bar"), NULL, find_rect(all->rect, "settings_bar"));
-	SDL_SetTextureAlphaMod(find_texture(all->texture, "save_bar"), all->alpha);
-	SDL_RenderCopy(all->renderer, find_texture(all->texture, "save_bar"), NULL, find_rect(all->rect, "save_bar"));
-	SDL_SetTextureAlphaMod(find_texture(all->texture, "exit_bar"), all->alpha);
-	SDL_RenderCopy(all->renderer, find_texture(all->texture, "exit_bar"), NULL, find_rect(all->rect, "exit_bar"));
-	if (all->status_btn == 1)
+	if (all->menu == NONE)
 	{
-		SDL_SetTextureAlphaMod(find_texture(all->texture, "text_play_white"), all->alpha);
-		SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_play_white"), NULL, find_rect(all->rect, "text_play"));
+		SDL_SetTextureAlphaMod(find_texture(all->texture, "title_menu"), all->alpha);
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "title_menu"), NULL, find_rect(all->rect, "title_menu"));
+		SDL_SetTextureAlphaMod(find_texture(all->texture, "play_bar"), all->alpha);
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "play_bar"), NULL, find_rect(all->rect, "play_bar"));
+		SDL_SetTextureAlphaMod(find_texture(all->texture, "settings_bar"), all->alpha);
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "settings_bar"), NULL, find_rect(all->rect, "settings_bar"));
+		SDL_SetTextureAlphaMod(find_texture(all->texture, "save_bar"), all->alpha);
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "save_bar"), NULL, find_rect(all->rect, "save_bar"));
+		SDL_SetTextureAlphaMod(find_texture(all->texture, "exit_bar"), all->alpha);
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "exit_bar"), NULL, find_rect(all->rect, "exit_bar"));
+		if (all->status_btn == 1)
+		{
+			SDL_SetTextureAlphaMod(find_texture(all->texture, "text_play_white"), all->alpha);
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_play_white"), NULL, find_rect(all->rect, "text_play"));
+		}
+		else
+		{
+			SDL_SetTextureAlphaMod(find_texture(all->texture, "text_play"), all->alpha);
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_play"), NULL, find_rect(all->rect, "text_play"));
+		}
+		if (all->status_btn == 2)
+		{
+			SDL_SetTextureAlphaMod(find_texture(all->texture, "text_settings_white"), all->alpha);
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_settings_white"), NULL, find_rect(all->rect, "text_settings"));
+		}
+		else
+		{
+			SDL_SetTextureAlphaMod(find_texture(all->texture, "text_settings"), all->alpha);
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_settings"), NULL, find_rect(all->rect, "text_settings"));
+		}
+		if (all->status_btn == 3)
+		{
+			SDL_SetTextureAlphaMod(find_texture(all->texture, "text_save_white"), all->alpha);
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_save_white"), NULL, find_rect(all->rect, "text_save"));
+		}
+		else
+		{
+			SDL_SetTextureAlphaMod(find_texture(all->texture, "text_save"), all->alpha);
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_save"), NULL, find_rect(all->rect, "text_save"));
+		}
+		if (all->status_btn == 4)
+		{
+			SDL_SetTextureAlphaMod(find_texture(all->texture, "text_exit_white"), all->alpha);
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_exit_white"), NULL, find_rect(all->rect, "text_exit"));
+		}
+		else
+		{
+			SDL_SetTextureAlphaMod(find_texture(all->texture, "text_exit"), all->alpha);
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_exit"), NULL, find_rect(all->rect, "text_exit"));
+		}
+		if (all->alpha < 255)
+			all->alpha += 1;
 	}
-	else
+	if (all->menu == SETTINGS_BTN)
 	{
-		SDL_SetTextureAlphaMod(find_texture(all->texture, "text_play"), all->alpha);
-		SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_play"), NULL, find_rect(all->rect, "text_play"));
+		;
 	}
-	if (all->status_btn == 2)
+	if (all->menu == SAVE_BTN)
 	{
-		SDL_SetTextureAlphaMod(find_texture(all->texture, "text_settings_white"), all->alpha);
-		SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_settings_white"), NULL, find_rect(all->rect, "text_settings"));
+		;
 	}
-	else
-	{
-		SDL_SetTextureAlphaMod(find_texture(all->texture, "text_settings"), all->alpha);
-		SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_settings"), NULL, find_rect(all->rect, "text_settings"));
-	}
-	if (all->status_btn == 3)
-	{
-		SDL_SetTextureAlphaMod(find_texture(all->texture, "text_save_white"), all->alpha);
-		SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_save_white"), NULL, find_rect(all->rect, "text_save"));
-	}
-	else
-	{
-		SDL_SetTextureAlphaMod(find_texture(all->texture, "text_save"), all->alpha);
-		SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_save"), NULL, find_rect(all->rect, "text_save"));
-	}
-	if (all->status_btn == 4)
-	{
-		SDL_SetTextureAlphaMod(find_texture(all->texture, "text_exit_white"), all->alpha);
-		SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_exit_white"), NULL, find_rect(all->rect, "text_exit"));
-	}
-	else
-	{
-		SDL_SetTextureAlphaMod(find_texture(all->texture, "text_exit"), all->alpha);
-		SDL_RenderCopy(all->renderer, find_texture(all->texture, "text_exit"), NULL, find_rect(all->rect, "text_exit"));
-	}
-	if (all->alpha < 255)
-		all->alpha += 1;
 }
 
 void	menu_loop(t_all *all)

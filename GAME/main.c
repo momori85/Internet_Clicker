@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/12 20:26:52 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/13 20:42:34 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,21 @@ static uint8_t	init_vars(t_all *all)
 		printf("Erreur Mix_OpenAudio: %s\n", Mix_GetError());
 		return 1;
 	}
+	all->counter = TTF_OpenFont("FONT/ARCADECLASSIC.TTF", 36);
+    if (!all->counter) {
+        fprintf(stderr, "Erreur TTF_OpenFont: %s\n", TTF_GetError());
+        SDL_DestroyRenderer(all->renderer);
+        SDL_DestroyWindow(all->window);
+        TTF_Quit();
+        SDL_Quit();
+        return 1;
+    }
+	all->counter_color.a = 255;
+	all->counter_color.b = 255;
+	all->counter_color.g = 255;
+	all->counter_color.r = 255;
+	all->nb_count = 0;
+	all->counter_texture = NULL;
 	return (0);
 }
 

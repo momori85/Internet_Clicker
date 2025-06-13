@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:41:31 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/12 21:01:26 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/13 21:53:50 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,32 @@ void	menu_loop_event(t_all *all)
 			{
                 if (!mouse) 
 				{
-					if (isButtonClicked(*find_rect(all->rect, "text_play"), mouse_x, mouse_y))
+					if (all->menu == NONE)
 					{
-						all->render = EDGE_SCREEN;
-						init_rect_for_texture_level1(all);
-						init_texture_level1(all);
-						SDL_GetWindowSize(all->window, &width, &height);
-						new_size_texture(all, width, height);
-					}
-					if (isButtonClicked(*find_rect(all->rect, "text_settings"), mouse_x, mouse_y))
-					{
-					}
-					if (isButtonClicked(*find_rect(all->rect, "text_save"), mouse_x, mouse_y))
-					{
-					}
-					if (isButtonClicked(*find_rect(all->rect, "text_exit"), mouse_x, mouse_y))
-					{
+						if (isButtonClicked(*find_rect(all->rect, "text_play"), mouse_x, mouse_y))
+						{
+							Mix_PlayChannel(-1, all->click, 0);
+							all->render = EDGE_SCREEN;
+							init_rect_for_texture_level1(all);
+							init_texture_level1(all);
+							SDL_GetWindowSize(all->window, &width, &height);
+							new_size_texture(all, width, height);
+						}
+						if (isButtonClicked(*find_rect(all->rect, "text_settings"), mouse_x, mouse_y))
+						{
+							Mix_PlayChannel(-1, all->click, 0);
+							all->menu = SETTINGS_BTN;
+						}
+						if (isButtonClicked(*find_rect(all->rect, "text_save"), mouse_x, mouse_y))
+						{
+							Mix_PlayChannel(-1, all->click, 0);
+							all->menu = SAVE_BTN;
+						}
+						if (isButtonClicked(*find_rect(all->rect, "text_exit"), mouse_x, mouse_y))
+						{
+							Mix_PlayChannel(-1, all->click, 0);
+							all->status = STOP;
+						}
 					}
 				}
 			}

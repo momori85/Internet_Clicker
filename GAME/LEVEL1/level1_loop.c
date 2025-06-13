@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:49:00 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/12 21:01:46 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/13 20:40:42 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	level1_loop_event(t_all *all)
 	int mouse = 0;
 	int	mouse_x = 0;
 	int mouse_y = 0;
+	int width;
+    int height;
 	SDL_Event	event;
 
 	while (SDL_PollEvent(&event))
@@ -34,8 +36,8 @@ void	level1_loop_event(t_all *all)
 		{
         	if (event.window.event == SDL_WINDOWEVENT_RESIZED)
 			{
-            	int width = event.window.data1;
-            	int height = event.window.data2;
+            	width = event.window.data1;
+            	height = event.window.data2;
 				SDL_GetWindowSize(all->window, &width, &height);
 				new_size_texture(all, width, height);
 			}
@@ -56,7 +58,7 @@ void	level1_loop_event(t_all *all)
 						float y  = mouse_y + sinf(angle) * rayon;
 						float vx = ((rand() % 200) - 100) / 100.0f;
 						float vy = -3.0f - (rand() % 100) / 100.0f;
-
+						all->nb_count++;
 						ft_lstadd_back_rectA(&all->clicker_rec, ft_lstnew_rectA(x, y, 100, 100, vx, vy, "prop_lvl1"));
 					}
 				}
@@ -85,6 +87,10 @@ void delete_node(t_rectA **head)
 void	level1_loop(t_all *all)
 {
 	int count;
+	int width;
+    int height;
+	SDL_Rect	dst;
+	char	buf[64];
 
 	count = 0;
 	level1_loop_event(all);
@@ -119,4 +125,19 @@ void	level1_loop(t_all *all)
 			rec = rec->next;
 		count++;
 	}
+	SDL_Surface *surf = TTF_RenderText_Blended(all->counter, SDL_itoa(all->nb_count, buf, 10), all->counter_color);
+	if (!surf)
+	{
+	    fprintf(stderr, "Erreur TTF_RenderText: %s\n", TTF_GetError());
+	    return ;
+	}
+	if (all->counter_texture) SDL_DestroyTexture(all->counter_texture);
+	all->counter_texture = SDL_CreateTextureFromSurface(all->renderer, surf);
+	SDL_GetWindowSize(all->window, &width, &height);
+	dst.x = (width - surf->w - 20);
+	dst.y = 20;
+	dst.w = surf->w;
+	dst.h = surf->h;
+	SDL_FreeSurface(surf);
+	SDL_RenderCopy(all->renderer, all->counter_texture, NULL, &dst);
 }

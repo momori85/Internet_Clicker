@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/06/12 20:33:10 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/13 20:24:08 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,15 @@ typedef struct s_all
 	SDL_Window			*window;
 	SDL_Renderer		*renderer;
 	Mix_Chunk			*click;
+	TTF_Font			*counter;
+	SDL_Color			counter_color;
+	SDL_Texture			*counter_texture;
 	int					tmp;
 	int					alpha;
 	int					status_btn;
 	int					window_x;
 	int					window_y;
+	int					nb_count;
 	t_rectA				*clicker_rec;
 }		t_all;
 

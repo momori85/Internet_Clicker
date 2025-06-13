@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:23:33 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/12 21:01:50 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/13 21:50:11 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	loading_loop_event(t_all *all)
 					{
 						Mix_PlayChannel(-1, all->click, 0);
 						all->button = PLAY_BTN_DOWN;
+						all->menu = NONE;
 					}
 				}
 			}

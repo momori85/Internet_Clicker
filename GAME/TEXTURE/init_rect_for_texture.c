@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/12 20:56:16 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/13 21:42:16 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	init_texture_menu(t_all *all)
 
 void	init_rect_for_texture_level1(t_all *all)
 {
-	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(0, 0, 1920, 1080, "bg_level1"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(-100, -100, 2020, 1180, "bg_level1"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(659, 239, 602, 602, "logo_level1"));
 }
 
@@ -121,7 +121,6 @@ void	new_size_texture(t_all *all, int width, int height)
 				tmp->rect.x = tmp->origine.x * (100 * width / all->window_x) / 100;
 				tmp->rect.w = tmp->origine.w * (100 * width / all->window_x) / 100;
 			}
-			//printf ("tmp h = %d | w = %d\n", tmp->rect.y, tmp->rect.x);
 			tmp = tmp->next;
 		}
 	}
