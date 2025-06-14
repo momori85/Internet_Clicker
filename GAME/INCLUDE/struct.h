@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/06/13 20:24:08 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/14 16:16:11 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ typedef struct s_all
 	int					window_x;
 	int					window_y;
 	int					nb_count;
+	int					param_theme;
+	int					menu_theme;
 	t_rectA				*clicker_rec;
 }		t_all;
 

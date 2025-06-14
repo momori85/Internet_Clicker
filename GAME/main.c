@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/13 20:42:34 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/14 16:16:25 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ void	main_loop(t_all	*all)
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 	all->window_y = 1080;
 	all->window_x = 1920;
+	all->param_theme = 0;
+	all->menu_theme = 0;
 	while (all->status == RUNNING)
 	{
 		start_time = SDL_GetTicks();

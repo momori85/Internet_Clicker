@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:41:31 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/13 22:18:55 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/14 16:45:38 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void	menu_loop_event(t_all *all)
 			if (event.key.keysym.sym == SDLK_ESCAPE && all->menu == NONE)
 				all->status = STOP;
 			if (event.key.keysym.sym == SDLK_ESCAPE && all->menu == SETTINGS_BTN)
+			{
+				all->menu_theme = 0;
 				all->menu  = NONE;
+			}
 			if (event.key.keysym.sym == SDLK_ESCAPE && all->menu == SAVE_BTN)
 				all->menu = NONE;
 		}
@@ -80,6 +83,24 @@ void	menu_loop_event(t_all *all)
 							all->status = STOP;
 						}
 					}
+				}
+				if (all->menu == SETTINGS_BTN && all->menu_theme == 0)
+				{
+					if (isButtonClicked(*find_rect(all->rect, "settings_theme"), mouse_x, mouse_y))
+						all->menu_theme = 1;
+				}
+				if (all->menu_theme == 1 && all->menu == SETTINGS_BTN)
+				{
+					if (isButtonClicked(*find_rect(all->rect, "theme_default"), mouse_x, mouse_y))
+						all->param_theme = 0;
+					if (isButtonClicked(*find_rect(all->rect, "theme_dark"), mouse_x, mouse_y))
+						all->param_theme = 1;
+					if (isButtonClicked(*find_rect(all->rect, "theme_cyan"), mouse_x, mouse_y))
+						all->param_theme = 2;
+					if (isButtonClicked(*find_rect(all->rect, "theme_troll_btn"), mouse_x, mouse_y))
+						all->param_theme = 3;
+					if (isButtonClicked(*find_rect(all->rect, "theme_dog_btn"), mouse_x, mouse_y))
+						all->param_theme = 4;
 				}
 			}
 		}

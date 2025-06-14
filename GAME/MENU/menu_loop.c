@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:40:18 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/13 22:26:09 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/14 16:48:27 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,59 @@ void	menu_loop_load_texture(t_all *all)
 	Uint8			r;
 	Uint8			g;
 	Uint8			b;
+	Uint8 final_r;
+	Uint8 final_g;
+	Uint8 final_b;
 	float			shadow_factor;
 	
 	SDL_RenderClear(all->renderer);
-	Uint8 final_r = 0x85;
-	Uint8 final_g = 0x67;
-	Uint8 final_b = 0xF7;
-
-	y = 0;
-	while (y < SCREEN_HEIGHT)
+	if (all->param_theme == 0)
 	{
-		r = (Uint8)(final_r);
-		g = (Uint8)(final_g);
-		b = (Uint8)(final_b);
-		
-		shadow_factor = (float)y / (SCREEN_HEIGHT - 300);
-		shadow_factor = shadow_factor * shadow_factor * 0.5f;
-		
-		r = (Uint8)(r * (1.0f - shadow_factor));
-		g = (Uint8)(g * (1.0f - shadow_factor));
-		b = (Uint8)(b * (1.0f - shadow_factor));
-
-		SDL_SetRenderDrawColor(all->renderer, r, g, b, 255);
-		SDL_RenderDrawLine(all->renderer, 0, y, SCREEN_WIDTH, y);
-		y++;
+		final_r = THEME_DEFAUT_R;
+		final_g = THEME_DEFAUT_G;
+		final_b = THEME_DEFAUT_B;
+	}
+	else if (all->param_theme == 1)
+	{
+		final_r = THEME_DARK_R;
+		final_g = THEME_DARK_G;
+		final_b = THEME_DARK_B;
+	}
+	else if (all->param_theme == 2)
+	{
+		final_r = THEME_CYAN_R;
+		final_g = THEME_CYAN_G;
+		final_b = THEME_CYAN_B;
+	}
+	else if (all->param_theme == 3)
+	{
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_troll"), NULL, find_rect(all->rect, "theme_troll"));
+	}
+	else if (all->param_theme == 4)
+	{
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_dog"), NULL, find_rect(all->rect, "theme_dog"));
+	}
+	
+	if (all->param_theme <= 2)
+	{
+		y = 0;
+		while (y < SCREEN_HEIGHT)
+		{
+			r = (Uint8)(final_r);
+			g = (Uint8)(final_g);
+			b = (Uint8)(final_b);
+			
+			shadow_factor = (float)y / (SCREEN_HEIGHT - 300);
+			shadow_factor = shadow_factor * shadow_factor * 0.5f;
+			
+			r = (Uint8)(r * (1.0f - shadow_factor));
+			g = (Uint8)(g * (1.0f - shadow_factor));
+			b = (Uint8)(b * (1.0f - shadow_factor));
+	
+			SDL_SetRenderDrawColor(all->renderer, r, g, b, 255);
+			SDL_RenderDrawLine(all->renderer, 0, y, SCREEN_WIDTH, y);
+			y++;
+		}
 	}
 	if (all->menu == NONE)
 	{
@@ -101,6 +130,14 @@ void	menu_loop_load_texture(t_all *all)
 	if (all->menu == SETTINGS_BTN)
 	{
 		SDL_RenderCopy(all->renderer, find_texture(all->texture, "settings_theme"), NULL, find_rect(all->rect, "settings_theme"));
+		if (all->menu_theme == 1)
+		{
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_default"), NULL, find_rect(all->rect, "theme_default"));
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_dark"), NULL, find_rect(all->rect, "theme_dark"));
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_cyan"), NULL, find_rect(all->rect, "theme_cyan"));
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_troll_btn"), NULL, find_rect(all->rect, "theme_troll_btn"));
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_dog_btn"), NULL, find_rect(all->rect, "theme_dog_btn"));
+		}
 	}
 	if (all->menu == SAVE_BTN)
 	{

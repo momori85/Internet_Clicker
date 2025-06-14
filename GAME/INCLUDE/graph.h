@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 09:54:05 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/12 20:50:12 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/14 16:38:44 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,18 @@
 
 # define SCREEN_WIDTH 1920
 # define SCREEN_HEIGHT 1080
+
+# define THEME_DEFAUT_R 133
+# define THEME_DEFAUT_G 103
+# define THEME_DEFAUT_B 247
+
+# define THEME_DARK_R 64
+# define THEME_DARK_G 0
+# define THEME_DARK_B 121
+
+# define THEME_CYAN_R 182
+# define THEME_CYAN_G 100
+# define THEME_CYAN_B 255
 
 int 	isButtonClicked(SDL_Rect  rect, int mouseX, int mouseY);
 void	process_screen(t_all *all, t_status_render status);
