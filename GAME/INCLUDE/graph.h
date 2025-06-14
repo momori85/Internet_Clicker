@@ -6,17 +6,17 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 09:54:05 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/14 22:43:49 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/14 23:30:49 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GRAPH_H
 # define GRAPH_H
 
-# include "../../LIBRARY/include/SDL.h"
-# include "../../LIBRARY/include/SDL_mixer.h"
-# include "../../LIBRARY/include/SDL_image.h"
-# include "../../LIBRARY/include/SDL_ttf.h"
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_mixer.h>
+# include <SDL_ttf.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdint.h>

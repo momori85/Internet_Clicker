@@ -1,6 +1,8 @@
 
 CC=cc
 
+SDL_PATH := $(shell pwd)/SDL_LIB
+
 NAME=Internet-Clicker
 
 LOADING = LOADING/loading_loop.c \
@@ -26,8 +28,8 @@ RM=rm -f
 
 OBJ = $(SRC:%.c=.obj/%.o)
 
-CFLAGS = -Wall -Wextra -Werror -ILIBRARY/include -g -IGAME/INCLUDE
-LDLIBS = -lm -LLIBRARY/lib -lSDL2_mixer -lSDL2 -lSDL2_ttf -lSDL2_image
+CFLAGS = -Wall -Wextra -Werror -I$(SDL_PATH)/include/SDL2 -IGAME/INCLUDE -g
+LDLIBS = -lm -L$(SDL_PATH)/lib -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
 
 all: $(NAME)
 
