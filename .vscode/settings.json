@@ -1,6 +1,9 @@
 {
 	"files.associations": {
 		"graph.h": "c",
-		"chrono": "c"
+		"chrono": "c",
+		"sdl_mixer.h": "c",
+		"sdl_image.h": "c",
+		"sdl_ttf.h": "c"
 	}
 }
