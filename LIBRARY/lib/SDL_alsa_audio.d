@@ -1,0 +1,31 @@
+build/SDL_alsa_audio.lo: \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/audio/alsa/SDL_alsa_audio.c \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/audio/alsa/../../SDL_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/audio/alsa/../../dynapi/SDL_dynapi.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/audio/alsa/../../dynapi/SDL_dynapi_overrides.h \
+ include/SDL_config.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_platform.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/begin_code.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/close_code.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_assert.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_stdinc.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_config.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_log.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_timer.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_error.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_audio.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_endian.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_mutex.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_thread.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_atomic.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_platform.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_rwops.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/audio/alsa/../SDL_audio_c.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/audio/alsa/../../SDL_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/audio/alsa/SDL_alsa_audio.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/audio/alsa/../SDL_sysaudio.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_mutex.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_thread.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/audio/alsa/../../SDL_dataqueue.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/audio/alsa/.././SDL_audio_c.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_loadso.h

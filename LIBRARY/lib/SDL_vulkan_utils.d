@@ -1,0 +1,44 @@
+build/SDL_vulkan_utils.lo: \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/SDL_vulkan_utils.c \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/../SDL_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/../dynapi/SDL_dynapi.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/../dynapi/SDL_dynapi_overrides.h \
+ include/SDL_config.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_platform.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/begin_code.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/close_code.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_assert.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_stdinc.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_config.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_log.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/SDL_vulkan_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_stdinc.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/wayland/SDL_waylanddyn.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/wayland/../../SDL_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/wayland/SDL_waylandsym.h \
+ gen/wayland-client-protocol.h /usr/include/libdecor-0/libdecor.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/vulkan.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/vk_platform.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/vulkan_core.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/../vk_video/vulkan_video_codec_h264std.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/../vk_video/vulkan_video_codecs_common.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/../vk_video/vulkan_video_codec_h264std_encode.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/../vk_video/vulkan_video_codec_h264std.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/../vk_video/vulkan_video_codec_h265std.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/../vk_video/vulkan_video_codec_h265std_encode.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/../vk_video/vulkan_video_codec_h265std.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/../vk_video/vulkan_video_codec_h264std_decode.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/../vk_video/vulkan_video_codec_h265std_decode.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/vulkan_wayland.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/vulkan_xcb.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/./khronos/vulkan/vulkan_xlib.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_vulkan.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_video.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_pixels.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_endian.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_rect.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_error.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_rwops.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_surface.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_blendmode.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_error.h

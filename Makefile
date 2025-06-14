@@ -26,8 +26,8 @@ RM=rm -f
 
 OBJ = $(SRC:%.c=.obj/%.o)
 
-CFLAGS = -Wall -Wextra -Werror -I$(HOME)/.local/include -g -IGAME/INCLUDE
-LDLIBS = -lm -L$(HOME)/.local/lib -lSDL2_mixer -lSDL2 -lSDL2_ttf -lSDL2_image
+CFLAGS = -Wall -Wextra -Werror -ILIBRARY/include -g -IGAME/INCLUDE
+LDLIBS = -lm -LLIBRARY/lib -lSDL2_mixer -lSDL2 -lSDL2_ttf -lSDL2_image
 
 all: $(NAME)
 

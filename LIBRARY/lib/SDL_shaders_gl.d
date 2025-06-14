@@ -1,0 +1,25 @@
+build/SDL_shaders_gl.lo: \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/render/opengl/SDL_shaders_gl.c \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/render/opengl/../../SDL_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/render/opengl/../../dynapi/SDL_dynapi.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/render/opengl/../../dynapi/SDL_dynapi_overrides.h \
+ include/SDL_config.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_platform.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/begin_code.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/close_code.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_assert.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_stdinc.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_config.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_log.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_stdinc.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_opengl.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_opengl_glext.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_video.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_pixels.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_endian.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_rect.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_error.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_rwops.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_surface.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_blendmode.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/render/opengl/SDL_shaders_gl.h

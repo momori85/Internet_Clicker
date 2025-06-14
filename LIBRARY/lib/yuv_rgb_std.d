@@ -1,0 +1,21 @@
+build/yuv_rgb_std.lo: \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/yuv_rgb_std.c \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/../../SDL_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/../../dynapi/SDL_dynapi.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/../../dynapi/SDL_dynapi_overrides.h \
+ include/SDL_config.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_platform.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/begin_code.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/close_code.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_assert.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_stdinc.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_config.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_log.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/yuv_rgb.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/yuv_rgb_std.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/yuv_rgb_common.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_stdinc.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/yuv_rgb_sse.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/yuv_rgb_lsx.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/yuv_rgb_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/video/yuv2rgb/yuv_rgb_std_func.h

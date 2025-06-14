@@ -1,0 +1,29 @@
+build/SDL_timer.lo: \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/SDL_timer.c \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/../SDL_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/../dynapi/SDL_dynapi.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/../dynapi/SDL_dynapi_overrides.h \
+ include/SDL_config.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_platform.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/begin_code.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/close_code.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_assert.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_stdinc.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_config.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_log.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_timer.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_error.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/SDL_timer_c.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_atomic.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_platform.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_cpuinfo.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/../thread/SDL_systhread.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/../thread/../SDL_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_thread.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_atomic.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/include/SDL_mutex.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/../thread/SDL_thread_c.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/../thread/pthread/SDL_systhread_c.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/../thread/pthread/../../SDL_internal.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/../thread/../SDL_error_c.h \
+ /home/amaury/Téléchargements/SDL2-2.32.6/src/timer/../thread/.././SDL_internal.h
