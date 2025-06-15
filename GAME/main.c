@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/14 16:16:25 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/15 21:28:50 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,10 @@ void	main_loop(t_all	*all)
 	all->clicker_rec = NULL;
 	Mix_Chunk* son1 = Mix_LoadWAV("GAME/MUSIQUE/menu.mp3");
 	all->click = Mix_LoadWAV("GAME/MUSIQUE/click.mp3");
+	SDL_Surface* surface = IMG_Load("UTILITAIRE/cursor.png");
+	SDL_Cursor* cursor = SDL_CreateColorCursor(surface, 1, 1);
+	SDL_SetCursor(cursor);
+	SDL_FreeSurface(surface);
 	if (!son1 || !all->click)
 	{
         printf("Erreur de chargement du son: %s\n", Mix_GetError());
@@ -118,6 +122,7 @@ void	main_loop(t_all	*all)
 		if (frame_duration < 1000 / 60)
 			SDL_Delay((1000 / 60) - frame_duration);
 	}
+	SDL_FreeCursor(cursor);
 	Mix_FreeChunk(son1);
 	Mix_FreeChunk(all->click);
 }
