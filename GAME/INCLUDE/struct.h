@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/06/18 15:41:22 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:16:00 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ typedef	struct s_btn_lvl1
 typedef struct s_btn_menu
 {
 	int		settings_btn;
+	int		scroll;
+	int		scrollspeed;
 }	t_btn_menu;
 
 typedef struct s_all

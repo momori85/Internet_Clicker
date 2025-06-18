@@ -3,14 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   event_loop.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:41:31 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 16:29:21 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 19:20:29 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INCLUDE/graph.h"
+
+void	ft_scroll(t_all *all, int pos)
+{
+	SDL_Rect *tmp;
+	
+	tmp = find_rect(all->rect, "exit_bar");
+	tmp->y += pos;
+	tmp = find_rect(all->rect, "play_bar");
+	tmp->y += pos;
+	tmp = find_rect(all->rect, "save_bar");
+	tmp->y += pos;
+	tmp = find_rect(all->rect, "settings_bar");
+	tmp->y += pos;
+	tmp = find_rect(all->rect, "title_menu");
+	tmp->y += pos;
+	tmp = find_rect(all->rect, "text_exit");
+	tmp->y += pos;
+	tmp = find_rect(all->rect, "text_save");
+	tmp->y += pos;
+	tmp = find_rect(all->rect, "text_play");
+	tmp->y += pos;
+	tmp = find_rect(all->rect, "text_settings");
+	tmp->y += pos;
+	tmp = find_rect(all->rect, "cochon");
+	tmp->y += pos;
+}
 
 void	menu_loop_event(t_all *all)
 {
@@ -41,6 +67,36 @@ void	menu_loop_event(t_all *all)
 			all->btn_menu.settings_btn = 6;
 		else
 			all->btn_menu.settings_btn = 0;
+		if (event.type == SDL_MOUSEWHEEL)
+		{
+			if (event.wheel.y > 0)
+			{
+				// Molette vers le haut
+				all->btn_menu.scroll -= all->btn_menu.scrollspeed;
+				if (all->btn_menu.scroll <= -1080)
+				{
+					//ft_scroll(all, -(all->btn_menu.scrollspeed));
+					all->btn_menu.scroll = -1080;
+				}
+				else
+					ft_scroll(all, -all->btn_menu.scrollspeed);
+				//printf("Molette vers le haut\n");
+			}
+			else if (event.wheel.y < 0)
+			{
+				// Molette vers le bas
+				all->btn_menu.scroll += all->btn_menu.scrollspeed;
+				if (all->btn_menu.scroll > 0)
+				{
+					all->btn_menu.scroll = 0;
+				}
+				else
+					ft_scroll(all, all->btn_menu.scrollspeed);
+				
+
+				//printf("Molette vers le bas\n");
+			}
+		}
 		if (event.type == SDL_KEYDOWN)
 		{
 			if (event.key.keysym.sym == SDLK_ESCAPE && all->menu == NONE)

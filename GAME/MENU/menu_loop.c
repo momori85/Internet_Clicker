@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   menu_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:40:18 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 16:29:49 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 19:17:32 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,10 @@ void	menu_loop_load_texture(t_all *all)
 	}
 	if (all->menu == NONE)
 	{
+		SDL_Rect	*tmp_pos;
+		tmp_pos = find_rect(all->rect, "cochon");
+		if (tmp_pos->y <= 2000)
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "cochon"), NULL, find_rect(all->rect, "cochon"));
 		SDL_SetTextureAlphaMod(find_texture(all->texture, "title_menu"), all->alpha);
 		SDL_RenderCopy(all->renderer, find_texture(all->texture, "title_menu"), NULL, find_rect(all->rect, "title_menu"));
 		SDL_SetTextureAlphaMod(find_texture(all->texture, "play_bar"), all->alpha);

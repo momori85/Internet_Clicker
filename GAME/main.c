@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 15:41:40 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 18:16:30 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ static uint8_t	init_vars(t_all *all)
 	all->counter_color.g = 255;
 	all->counter_color.r = 255;
 	all->nb_count = 0;
+	all->btn_menu.scroll = 0;
+	all->btn_menu.scrollspeed = 20;
 	all->counter_texture = NULL;
 	return (0);
 }
