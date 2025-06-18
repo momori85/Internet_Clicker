@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 15:09:39 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 15:41:40 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ static uint8_t	init_vars(t_all *all)
 void		ft_init_btn(t_all *all)
 {
 	all->btn_lvl1.shop_btn_1 = 60;
+
+	all->btn_menu.settings_btn = 0;
 }
 
 void	main_loop(t_all	*all)

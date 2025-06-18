@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 15:05:41 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 16:29:06 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,10 @@ void	init_rect_for_texture_menu(t_all *all)
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(597, 11, 728, 309, "title_menu"));
 	//settings
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(40, 100, 826, 105, "settings_theme"));
+
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1050, 100, 826, 105, "theme_default"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1050, 300, 826, 105, "theme_dark"));
-	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1050, 500, 826, 105, "theme_cyan"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1050, 500, 826, 105, "theme_sky_btn"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(0, 0, 1920, 1080, "theme_troll"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(0, 0, 1920, 1080, "theme_dog"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1050, 700, 826, 105, "theme_troll_btn"));
@@ -98,13 +99,26 @@ void	init_texture_menu(t_all *all)
 	SDL_SetTextureBlendMode(find_texture(all->texture, "text_settings_white"), SDL_BLENDMODE_BLEND);
 	//settings
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/settings_theme.png", all->renderer), "settings_theme"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_default.png", all->renderer), "theme_default"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/settings_theme_white.png", all->renderer), "settings_theme_white"));
+	
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_dark.png", all->renderer), "theme_dark"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_cyan.png", all->renderer), "theme_cyan"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_dark_white.png", all->renderer), "theme_dark_white"));
+	
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_default.png", all->renderer), "theme_default"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_default_white.png", all->renderer), "theme_default_white"));
+	
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_troll_btn.png", all->renderer), "theme_troll_btn"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_troll_btn_white.png", all->renderer), "theme_troll_btn_white"));
+	
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_dog_btn.png", all->renderer), "theme_dog_btn"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_dog_btn_white.png", all->renderer), "theme_dog_btn_white"));
+
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_sky_btn.png", all->renderer), "theme_sky_btn"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_sky_btn_white.png", all->renderer), "theme_sky_btn_white"));
+	
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_sky.png", all->renderer), "theme_sky"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/troll_wallpaper.png", all->renderer), "theme_troll"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/dog_wallpaper.png", all->renderer), "theme_dog"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_troll_btn.png", all->renderer), "theme_troll_btn"));
-	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/SETTINGS/theme_dog_btn.png", all->renderer), "theme_dog_btn"));
 	//save
 }
 

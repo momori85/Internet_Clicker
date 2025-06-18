@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_texture.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 14:57:30 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/04 09:45:00 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 16:31:50 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ SDL_Texture	*find_texture(t_texture *texture, char *name)
 	tmp = texture;
 	while (tmp)
 	{
-		if (ft_strncmp(name, tmp->name, strlen(name)) == 0)
+		if (ft_strncmp(name, tmp->name, strlen(name)) == 0 && ft_strncmp(name, tmp->name, strlen(tmp->name)) == 0)
 			return (tmp->texture);
 		tmp = tmp->next;
 	}
@@ -47,7 +47,7 @@ SDL_Rect	*find_rect(t_rect *rect, char *name)
 	tmp = rect;
 	while (tmp)
 	{
-		if (ft_strncmp(name, tmp->name, strlen(name)) == 0)
+		if (ft_strncmp(name, tmp->name, strlen(name)) == 0 && ft_strncmp(name, tmp->name, strlen(tmp->name)) == 0)
 			return (&tmp->rect);
 		tmp = tmp->next;
 	}

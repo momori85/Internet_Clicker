@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   menu_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:40:18 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/14 16:48:27 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/18 16:29:49 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ void	menu_loop_load_texture(t_all *all)
 	}
 	else if (all->param_theme == 2)
 	{
-		final_r = THEME_CYAN_R;
-		final_g = THEME_CYAN_G;
-		final_b = THEME_CYAN_B;
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_sky"), NULL, find_rect(all->rect, "theme_dog"));
 	}
 	else if (all->param_theme == 3)
 	{
@@ -51,7 +49,7 @@ void	menu_loop_load_texture(t_all *all)
 		SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_dog"), NULL, find_rect(all->rect, "theme_dog"));
 	}
 	
-	if (all->param_theme <= 2)
+	if (all->param_theme <= 1)
 	{
 		y = 0;
 		while (y < SCREEN_HEIGHT)
@@ -129,14 +127,32 @@ void	menu_loop_load_texture(t_all *all)
 	}
 	if (all->menu == SETTINGS_BTN)
 	{
-		SDL_RenderCopy(all->renderer, find_texture(all->texture, "settings_theme"), NULL, find_rect(all->rect, "settings_theme"));
+		if (all->btn_menu.settings_btn == 1)
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "settings_theme_white"), NULL, find_rect(all->rect, "settings_theme"));
+		else
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "settings_theme"), NULL, find_rect(all->rect, "settings_theme"));
 		if (all->menu_theme == 1)
 		{
-			SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_default"), NULL, find_rect(all->rect, "theme_default"));
-			SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_dark"), NULL, find_rect(all->rect, "theme_dark"));
-			SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_cyan"), NULL, find_rect(all->rect, "theme_cyan"));
-			SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_troll_btn"), NULL, find_rect(all->rect, "theme_troll_btn"));
-			SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_dog_btn"), NULL, find_rect(all->rect, "theme_dog_btn"));
+			if (all->btn_menu.settings_btn == 2)
+				SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_dark_white"), NULL, find_rect(all->rect, "theme_dark"));
+			else
+				SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_dark"), NULL, find_rect(all->rect, "theme_dark"));
+			if (all->btn_menu.settings_btn == 3)
+				SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_default_white"), NULL, find_rect(all->rect, "theme_default"));
+			else
+				SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_default"), NULL, find_rect(all->rect, "theme_default"));
+			if (all->btn_menu.settings_btn == 4)
+				SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_troll_btn_white"), NULL, find_rect(all->rect, "theme_troll_btn"));
+			else
+				SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_troll_btn"), NULL, find_rect(all->rect, "theme_troll_btn"));
+			if (all->btn_menu.settings_btn == 5)
+				SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_dog_btn_white"), NULL, find_rect(all->rect, "theme_dog_btn"));
+			else
+				SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_dog_btn"), NULL, find_rect(all->rect, "theme_dog_btn"));
+			if (all->btn_menu.settings_btn == 6)
+				SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_sky_btn_white"), NULL, find_rect(all->rect, "theme_sky_btn"));
+			else
+				SDL_RenderCopy(all->renderer, find_texture(all->texture, "theme_sky_btn"), NULL, find_rect(all->rect, "theme_sky_btn"));
 		}
 	}
 	if (all->menu == SAVE_BTN)

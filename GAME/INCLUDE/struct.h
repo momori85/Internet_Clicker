@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/06/18 14:33:52 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 15:41:22 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,11 @@ typedef	struct s_btn_lvl1
 
 } t_btn_lvl1;
 
+typedef struct s_btn_menu
+{
+	int		settings_btn;
+}	t_btn_menu;
+
 typedef struct s_all
 {
 	t_rect				*rect;
@@ -93,6 +98,7 @@ typedef struct s_all
 	SDL_Color			counter_color;
 	SDL_Texture			*counter_texture;
 	t_btn_lvl1			btn_lvl1;
+	t_btn_menu			btn_menu;
 	int					tmp;
 	int					alpha;
 	int					status_btn;

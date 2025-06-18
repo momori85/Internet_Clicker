@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:41:31 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 10:48:21 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 16:29:21 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ void	menu_loop_event(t_all *all)
 		mouse_y = event.button.y;
 		//if (event.type == SDL_QUIT)
 		//	all->status = STOP;
+		if (isButtonClicked(*find_rect(all->rect, "settings_theme"), mouse_x, mouse_y))
+			all->btn_menu.settings_btn = 1;
+		else if (isButtonClicked(*find_rect(all->rect, "theme_dark"), mouse_x, mouse_y))
+			all->btn_menu.settings_btn = 2;
+		else if (isButtonClicked(*find_rect(all->rect, "theme_default"), mouse_x, mouse_y))
+			all->btn_menu.settings_btn = 3;
+		else if (isButtonClicked(*find_rect(all->rect, "theme_troll_btn"), mouse_x, mouse_y))
+			all->btn_menu.settings_btn = 4;
+		else if (isButtonClicked(*find_rect(all->rect, "theme_dog_btn"), mouse_x, mouse_y))
+			all->btn_menu.settings_btn = 5;
+		else if (isButtonClicked(*find_rect(all->rect, "theme_sky_btn"), mouse_x, mouse_y))
+			all->btn_menu.settings_btn = 6;
+		else
+			all->btn_menu.settings_btn = 0;
 		if (event.type == SDL_KEYDOWN)
 		{
 			if (event.key.keysym.sym == SDLK_ESCAPE && all->menu == NONE)
@@ -87,7 +101,10 @@ void	menu_loop_event(t_all *all)
 				if (all->menu == SETTINGS_BTN && all->menu_theme == 0)
 				{
 					if (isButtonClicked(*find_rect(all->rect, "settings_theme"), mouse_x, mouse_y))
+					{
 						all->menu_theme = 1;
+						all->btn_menu.settings_btn = 1;
+					}
 				}
 				if (all->menu_theme == 1 && all->menu == SETTINGS_BTN)
 				{
@@ -95,7 +112,7 @@ void	menu_loop_event(t_all *all)
 						all->param_theme = 0;
 					if (isButtonClicked(*find_rect(all->rect, "theme_dark"), mouse_x, mouse_y))
 						all->param_theme = 1;
-					if (isButtonClicked(*find_rect(all->rect, "theme_cyan"), mouse_x, mouse_y))
+					if (isButtonClicked(*find_rect(all->rect, "theme_sky_btn"), mouse_x, mouse_y))
 						all->param_theme = 2;
 					if (isButtonClicked(*find_rect(all->rect, "theme_troll_btn"), mouse_x, mouse_y))
 						all->param_theme = 3;
