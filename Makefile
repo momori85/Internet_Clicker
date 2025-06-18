@@ -90,3 +90,7 @@ install: $(DESKTOP_INSTALL_PATH) $(ICON_INSTALL_PATH)
 	# Mettre à jour la base de données des icônes
 	xdg-icon-resource forceupdate --size 256
 
+full_install:
+	./rebuild_sdl2.sh
+	make all
+	make install

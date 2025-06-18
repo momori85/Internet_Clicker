@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   level1_loop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:49:00 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/13 20:40:42 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/18 10:44:58 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	level1_loop_event(t_all *all)
 		mouse_x = event.button.x;
 		mouse_y = event.button.y;
 		if (event.type == SDL_QUIT)
-			all->status = STOP;
+			all->status = MAIN_SCREEN;
 		if (event.type == SDL_KEYDOWN)
 		{
 			if (event.key.keysym.sym == SDLK_ESCAPE)
