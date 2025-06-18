@@ -6,11 +6,12 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:40:18 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 19:17:32 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/18 22:03:45 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../INCLUDE/graph.h"
+
 
 void	menu_loop_load_texture(t_all *all)
 {
@@ -163,6 +164,7 @@ void	menu_loop_load_texture(t_all *all)
 	{
 		;
 	}
+
 }
 
 void	menu_loop(t_all *all)

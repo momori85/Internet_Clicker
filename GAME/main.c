@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 18:16:30 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/18 22:45:47 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,68 @@ void		ft_init_btn(t_all *all)
 	all->btn_menu.settings_btn = 0;
 }
 
+void drawOutsideCircle(SDL_Renderer *renderer, int a, int b, int r, SDL_Color outColor, int width, int height) {
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            int dx = x - a;
+            int dy = y - b;
+            // Test : si le pixel est à l'extérieur du cercle
+            if (dx * dx + dy * dy > r * r) {
+                SDL_SetRenderDrawColor(renderer, outColor.r, outColor.g, outColor.b, outColor.a);
+                SDL_RenderDrawPoint(renderer, x, y);
+            }
+            // sinon : ne rien dessiner à l'intérieur
+        }
+    }
+}
+
+void transition_reverse(t_all *all)
+{
+    static float count = 10.0f;  // rayon initial plus grand
+    int width = 0, height = 0;
+    SDL_GetWindowSize(all->window, &width, &height);
+    int diagonal = (int)sqrt(width * width + height * height); 
+    SDL_Color outside = {0, 0, 0, 255};
+
+    SDL_SetRenderDrawColor(all->renderer, 0, 0, 0, 255);
+    SDL_RenderClear(all->renderer);
+    if (count <= diagonal)
+    {
+		level1_loop(all);
+        drawOutsideCircle(all->renderer, width / 2, height / 2, (int)count, outside, width, height);
+        count = count * 1.04f + 4;  // croissance plus douce
+    }
+    else
+    {
+        count = 10.0f;
+        all->render = EDGE_SCREEN;
+    }
+}
+
+void	transition(t_all *all)
+{
+    static float count = 0; // pour démarrer depuis la diagonale
+    int width = 0, height = 0;
+    SDL_GetWindowSize(all->window, &width, &height);
+    int diagonal = (int)sqrt(width * width + height * height); 
+    SDL_Color outside = {0, 0, 0, 255};
+
+    SDL_SetRenderDrawColor(all->renderer, 0, 0, 0, 255);
+    SDL_RenderClear(all->renderer);
+    if (count < diagonal)
+    {
+		menu_loop_load_texture(all);
+        float rayon = diagonal - count; 
+        drawOutsideCircle(all->renderer, width / 2, height / 2, (int)rayon, outside, width, height);
+        count += 20; // décroissance directe
+    }
+    else
+    {
+        count = 0;
+        all->render = TRANSI_REVERS;
+    }
+}
+
 void	main_loop(t_all	*all)
 {
 	Uint32			start_time;
@@ -125,6 +187,12 @@ void	main_loop(t_all	*all)
 				break ;
 			case OPERAGX_SCREEN:
 				break ;
+			case TRANSI:
+				transition(all);
+				break;
+			case TRANSI_REVERS:
+				transition_reverse(all);
+				break;
 			case ERR:
 				all->status = STOP;
 				break ;

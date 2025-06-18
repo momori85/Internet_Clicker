@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:41:31 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 19:20:29 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/18 22:04:18 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void	menu_loop_event(t_all *all)
 						if (isButtonClicked(*find_rect(all->rect, "text_play"), mouse_x, mouse_y))
 						{
 							Mix_PlayChannel(-1, all->click, 0);
-							all->render = EDGE_SCREEN;
+							all->render = TRANSI;
 							init_rect_for_texture_level1(all);
 							init_texture_level1(all);
 							SDL_GetWindowSize(all->window, &width, &height);
@@ -158,6 +158,7 @@ void	menu_loop_event(t_all *all)
 				{
 					if (isButtonClicked(*find_rect(all->rect, "settings_theme"), mouse_x, mouse_y))
 					{
+						Mix_PlayChannel(-1, all->click, 0);
 						all->menu_theme = 1;
 						all->btn_menu.settings_btn = 1;
 					}
@@ -165,15 +166,30 @@ void	menu_loop_event(t_all *all)
 				if (all->menu_theme == 1 && all->menu == SETTINGS_BTN)
 				{
 					if (isButtonClicked(*find_rect(all->rect, "theme_default"), mouse_x, mouse_y))
+					{
+						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 0;
+					}
 					if (isButtonClicked(*find_rect(all->rect, "theme_dark"), mouse_x, mouse_y))
+					{
+						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 1;
+					}
 					if (isButtonClicked(*find_rect(all->rect, "theme_sky_btn"), mouse_x, mouse_y))
+					{
+						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 2;
+					}
 					if (isButtonClicked(*find_rect(all->rect, "theme_troll_btn"), mouse_x, mouse_y))
+					{
+						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 3;
+					}
 					if (isButtonClicked(*find_rect(all->rect, "theme_dog_btn"), mouse_x, mouse_y))
+					{
+						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 4;
+					}
 				}
 			}
 		}

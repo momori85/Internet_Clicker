@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/06/18 18:16:00 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/18 21:57:38 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef enum __attribute__((__packed__)) e_statusrender
 	CHROME_SCREEN,
 	OPERA_SCREEN,
 	OPERAGX_SCREEN,
+	TRANSI,
+	TRANSI_REVERS,
 	ERR
 }	t_status_render;
 
