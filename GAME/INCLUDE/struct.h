@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/06/14 16:16:11 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/18 14:33:52 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,12 @@ typedef struct s_rectA
 	struct s_rectA		*next;
 }		t_rectA;
 
+typedef	struct s_btn_lvl1
+{
+	int		shop_btn_1;
+
+} t_btn_lvl1;
+
 typedef struct s_all
 {
 	t_rect				*rect;
@@ -86,6 +92,7 @@ typedef struct s_all
 	TTF_Font			*counter;
 	SDL_Color			counter_color;
 	SDL_Texture			*counter_texture;
+	t_btn_lvl1			btn_lvl1;
 	int					tmp;
 	int					alpha;
 	int					status_btn;
@@ -94,6 +101,8 @@ typedef struct s_all
 	int					nb_count;
 	int					param_theme;
 	int					menu_theme;
+	int 				lvl1_box_shop;
+	int					mouse_power;
 	t_rectA				*clicker_rec;
 }		t_all;
 

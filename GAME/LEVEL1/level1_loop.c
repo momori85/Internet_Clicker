@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:49:00 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 10:44:58 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 15:08:59 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ void	level1_loop_event(t_all *all)
 		mouse_x = event.button.x;
 		mouse_y = event.button.y;
 		if (event.type == SDL_QUIT)
-			all->status = MAIN_SCREEN;
+		{
+			all->render = MAIN_SCREEN;
+			all->menu = NONE;
+			all->status = RUNNING;
+		}
 		if (event.type == SDL_KEYDOWN)
 		{
 			if (event.key.keysym.sym == SDLK_ESCAPE)
@@ -48,7 +52,21 @@ void	level1_loop_event(t_all *all)
 			{
                 if (!mouse) 
 				{
-					if (isButtonClicked(*find_rect(all->rect, "bg_level1"), mouse_x, mouse_y))
+					if (isButtonClicked(*find_rect(all->rect, "shop_lvl1"), mouse_x, mouse_y))
+					{
+						all->lvl1_box_shop = 1;
+					}
+					else if (all->lvl1_box_shop == 1 && isButtonClicked(*find_rect(all->rect, "shop_btn"), mouse_x, mouse_y) && all->btn_lvl1.shop_btn_1 <= all->nb_count)
+					{
+						all->nb_count -= all->btn_lvl1.shop_btn_1;
+						all->btn_lvl1.shop_btn_1 *= 3.14;
+						all->mouse_power += 1;
+					}
+					else if (!isButtonClicked(*find_rect(all->rect, "shop_box"), mouse_x, mouse_y) && all->lvl1_box_shop == 1)
+					{
+						all->lvl1_box_shop = 0;
+					}
+					else if (isButtonClicked(*find_rect(all->rect, "bg_level1"), mouse_x, mouse_y))
 					{
 						Mix_PlayChannel(-1, all->click, 0);
 						float angle = (rand() % 360) * 3.14 / 180.0f;
@@ -58,7 +76,7 @@ void	level1_loop_event(t_all *all)
 						float y  = mouse_y + sinf(angle) * rayon;
 						float vx = ((rand() % 200) - 100) / 100.0f;
 						float vy = -3.0f - (rand() % 100) / 100.0f;
-						all->nb_count++;
+						all->nb_count += all->mouse_power;
 						ft_lstadd_back_rectA(&all->clicker_rec, ft_lstnew_rectA(x, y, 100, 100, vx, vy, "prop_lvl1"));
 					}
 				}
@@ -97,6 +115,13 @@ void	level1_loop(t_all *all)
 	SDL_RenderClear(all->renderer);
 	SDL_RenderCopy(all->renderer, find_texture(all->texture, "bg_level1"), NULL, find_rect(all->rect, "bg_level1"));
 	SDL_RenderCopy(all->renderer, find_texture(all->texture, "logo_fond_level1"), NULL, find_rect(all->rect, "logo_level1"));
+	SDL_RenderCopy(all->renderer, find_texture(all->texture, "shop_lvl1"), NULL, find_rect(all->rect, "shop_lvl1"));
+	if (all->lvl1_box_shop  == 1)
+	{
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "shop_box"), NULL, find_rect(all->rect, "shop_box"));
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "shop_btn"), NULL, find_rect(all->rect, "shop_btn"));
+		create_text(all->counter, all->renderer, all->window, SDL_itoa(all->btn_lvl1.shop_btn_1, buf, 10), 1350, 205);
+	}
 	t_rectA	*rec;
 	rec = all->clicker_rec;
 	if (rec && rec->rect.y <= -200)

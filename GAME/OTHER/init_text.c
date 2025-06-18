@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_text.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:15:01 by amblanch          #+#    #+#             */
-/*   Updated: 2025/04/04 09:44:49 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/18 14:38:42 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ TTF_Font	*init_text(SDL_Renderer *renderer, SDL_Window *window)
 	return (font);
 }
 
-void	craete_text(TTF_Font *font, SDL_Renderer *renderer, SDL_Window *window, char *text, int pos_x, int pos_y)
+void	create_text(TTF_Font *font, SDL_Renderer *renderer, SDL_Window *window, char *text, int pos_x, int pos_y)
 {
 	int	textWidth = 0;
 	int	textHeight = 0;

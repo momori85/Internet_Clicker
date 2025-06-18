@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_rect_for_texture.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/14 16:53:17 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/18 15:05:41 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,11 +112,17 @@ void	init_rect_for_texture_level1(t_all *all)
 {
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(-100, -100, 2020, 1180, "bg_level1"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(659, 239, 602, 602, "logo_level1"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1100, 120, 700, 824, "shop_box"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(300, 960, 100, 100, "shop_lvl1"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1142, 219, 308, 70, "shop_btn"));
 }
 
 void	init_texture_level1(t_all *all)
 {
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LEVEL_1/bg.png", all->renderer), "bg_level1"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LEVEL_1/shop_lvl1.png", all->renderer), "shop_lvl1"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LEVEL_1/shop_box.png", all->renderer), "shop_box"));
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LEVEL_1/shop_btn.png", all->renderer), "shop_btn"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LEVEL_1/logo.png", all->renderer), "logo_fond_level1"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/LEVEL_1/logo.png", all->renderer), "logo_level1"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "logo_level1"), SDL_BLENDMODE_BLEND);

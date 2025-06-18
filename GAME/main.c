@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/15 21:28:50 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/18 15:09:39 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,11 @@ static uint8_t	init_vars(t_all *all)
 	return (0);
 }
 
+void		ft_init_btn(t_all *all)
+{
+	all->btn_lvl1.shop_btn_1 = 60;
+}
+
 void	main_loop(t_all	*all)
 {
 	Uint32			start_time;
@@ -93,6 +98,9 @@ void	main_loop(t_all	*all)
 	all->window_x = 1920;
 	all->param_theme = 0;
 	all->menu_theme = 0;
+	all->lvl1_box_shop = 0;
+	all->mouse_power = 1;
+	ft_init_btn(all);
 	while (all->status == RUNNING)
 	{
 		start_time = SDL_GetTicks();
