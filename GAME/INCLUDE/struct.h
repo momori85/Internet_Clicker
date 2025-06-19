@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/06/19 11:24:02 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/19 16:46:11 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ typedef struct s_btn_menu
 	int		settings_btn;
 	int		scroll;
 	int		scrollspeed;
+	char	*bar_theme;
+	char	*bar_theme_down;
 }	t_btn_menu;
 
 typedef struct s_all

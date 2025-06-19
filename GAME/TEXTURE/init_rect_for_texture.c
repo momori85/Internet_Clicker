@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 15:19:30 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/19 16:27:26 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void	init_rect_for_texture_menu(t_all *all)
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(597, 11, 728, 309, "title_menu"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(-125, 1820, 2252, 408, "cochon"));
 	//settings
+		//bar
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(40, 100, 826, 105, "settings_theme"));
-
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1050, 100, 826, 105, "theme_default"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1050, 300, 826, 105, "theme_dark"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1050, 500, 826, 105, "theme_sky_btn"));
@@ -67,6 +67,13 @@ void	init_rect_for_texture_menu(t_all *all)
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(0, 0, 1920, 1080, "theme_dog"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1050, 700, 826, 105, "theme_troll_btn"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1050, 900, 826, 105, "theme_dog_btn"));
+		//text
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(366, 133, 174, 39, "settings_theme_text"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1355, 133, 217, 39, "theme_default_text"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1395, 333, 137, 39, "theme_dark_text"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1297, 533, 333, 39, "theme_sky_btn_text"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1269, 733, 388, 39, "theme_troll_btn_text"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(1297, 933, 333, 39, "theme_dog_btn_text"));
 	//save
 }
 
@@ -78,6 +85,10 @@ void	init_texture_menu(t_all *all)
 	SDL_SetTextureBlendMode(find_texture(all->texture, "menu_bar"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/menu_bar_down.png", all->renderer), "menu_bar_down"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "menu_bar_down"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/btn_sky.png", all->renderer), "btn_sky"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "btn_sky"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/btn_sky_down.png", all->renderer), "btn_sky_down"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "btn_sky_down"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/title.png", all->renderer), "title_menu"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "title_menu"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/text_exit.png", all->renderer), "text_exit"));

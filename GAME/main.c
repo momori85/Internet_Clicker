@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 13:38:38 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/19 16:22:29 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ static uint8_t	init_vars(t_all *all)
 	all->btn_menu.scroll = 0;
 	all->btn_menu.scrollspeed = 20;
 	all->counter_texture = NULL;
+	all->btn_menu.bar_theme = "menu_bar";
+	all->btn_menu.bar_theme_down = "menu_bar_down";
 	return (0);
 }
 

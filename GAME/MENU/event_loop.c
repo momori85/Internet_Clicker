@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:41:31 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 11:30:35 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/19 16:51:26 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ void	menu_loop_event(t_all *all)
 	{
 		mouse_x = event.button.x;
 		mouse_y = event.button.y;
-		//if (event.type == SDL_QUIT)
-		//	all->status = STOP;
+		if (event.type == SDL_QUIT)
+			all->status = STOP;
 		if (isButtonClicked(*find_rect(all->rect, "settings_theme"), mouse_x, mouse_y))
 			all->btn_menu.settings_btn = 1;
 		else if (isButtonClicked(*find_rect(all->rect, "theme_dark"), mouse_x, mouse_y))
@@ -69,22 +69,18 @@ void	menu_loop_event(t_all *all)
 			all->btn_menu.settings_btn = 0;
 		if (event.type == SDL_MOUSEWHEEL)
 		{
-			if (event.wheel.y > 0)
+			if (event.wheel.y < 0)
 			{
-				// Molette vers le haut
 				all->btn_menu.scroll -= all->btn_menu.scrollspeed;
 				if (all->btn_menu.scroll <= -1080)
 				{
-					//ft_scroll(all, -(all->btn_menu.scrollspeed));
 					all->btn_menu.scroll = -1080;
 				}
 				else
 					ft_scroll(all, -all->btn_menu.scrollspeed);
-				//printf("Molette vers le haut\n");
 			}
-			else if (event.wheel.y < 0)
+			else if (event.wheel.y > 0)
 			{
-				// Molette vers le bas
 				all->btn_menu.scroll += all->btn_menu.scrollspeed;
 				if (all->btn_menu.scroll > 0)
 				{
@@ -92,9 +88,6 @@ void	menu_loop_event(t_all *all)
 				}
 				else
 					ft_scroll(all, all->btn_menu.scrollspeed);
-				
-
-				//printf("Molette vers le bas\n");
 			}
 		}
 		if (event.type == SDL_KEYDOWN)
@@ -132,6 +125,7 @@ void	menu_loop_event(t_all *all)
 						{
 							Mix_PlayChannel(-1, all->click, 0);
 							all->status_btn_down = 1;
+							all->alpha = 255;
 							init_rect_for_texture_level1(all);
 							init_texture_level1(all);
 							SDL_GetWindowSize(all->window, &width, &height);
@@ -140,16 +134,19 @@ void	menu_loop_event(t_all *all)
 						if (isButtonClicked(*find_rect(all->rect, "text_settings"), mouse_x, mouse_y))
 						{
 							Mix_PlayChannel(-1, all->click, 0);
+							all->alpha = 255;
 							all->status_btn_down = 2;
 						}
 						if (isButtonClicked(*find_rect(all->rect, "text_save"), mouse_x, mouse_y))
 						{
 							Mix_PlayChannel(-1, all->click, 0);
+							all->alpha = 255;
 							all->status_btn_down = 3;
 						}
 						if (isButtonClicked(*find_rect(all->rect, "text_exit"), mouse_x, mouse_y))
 						{
 							Mix_PlayChannel(-1, all->click, 0);
+							all->alpha = 255;
 							all->status_btn_down = 4;
 						}
 					}
@@ -161,6 +158,7 @@ void	menu_loop_event(t_all *all)
 						Mix_PlayChannel(-1, all->click, 0);
 						all->menu_theme = 1;
 						all->btn_menu.settings_btn = 1;
+						all->status_btn_down = 5;
 					}
 				}
 				if (all->menu_theme == 1 && all->menu == SETTINGS_BTN)
@@ -169,26 +167,35 @@ void	menu_loop_event(t_all *all)
 					{
 						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 0;
+						all->btn_menu.bar_theme = "menu_bar";
+						all->btn_menu.bar_theme_down = "menu_bar_down";
+						all->status_btn_down = 6;
 					}
 					if (isButtonClicked(*find_rect(all->rect, "theme_dark"), mouse_x, mouse_y))
 					{
 						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 1;
+						all->status_btn_down = 7;
 					}
 					if (isButtonClicked(*find_rect(all->rect, "theme_sky_btn"), mouse_x, mouse_y))
 					{
 						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 2;
+						all->btn_menu.bar_theme = "btn_sky";
+						all->btn_menu.bar_theme_down = "btn_sky_down";
+						all->status_btn_down = 8;
 					}
 					if (isButtonClicked(*find_rect(all->rect, "theme_troll_btn"), mouse_x, mouse_y))
 					{
 						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 3;
+						all->status_btn_down = 9;
 					}
 					if (isButtonClicked(*find_rect(all->rect, "theme_dog_btn"), mouse_x, mouse_y))
 					{
 						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 4;
+						all->status_btn_down = 10;
 					}
 				}
 			}
