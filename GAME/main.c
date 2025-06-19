@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 11:24:16 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/19 13:38:38 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void drawOutsideCircle(SDL_Renderer *renderer, int a, int b, int r, SDL_Color ou
 
 void transition_reverse(t_all *all)
 {
-    static float count = 10.0f;  // rayon initial plus grand
+    static float count = 10.0f;
     int width = 0, height = 0;
     SDL_GetWindowSize(all->window, &width, &height);
     int diagonal = (int)sqrt(width * width + height * height); 
@@ -99,11 +99,11 @@ void transition_reverse(t_all *all)
 
     SDL_SetRenderDrawColor(all->renderer, 0, 0, 0, 255);
     SDL_RenderClear(all->renderer);
+	level1_loop(all);
     if (count <= diagonal)
     {
-		level1_loop(all);
         drawOutsideCircle(all->renderer, width / 2, height / 2, (int)count, outside, width, height);
-        count = count * 1.04f + 4;  // croissance plus douce
+        count = count * 1.04f + 4;
     }
     else
     {
@@ -114,7 +114,7 @@ void transition_reverse(t_all *all)
 
 void	transition(t_all *all)
 {
-    static float count = 0; // pour démarrer depuis la diagonale
+    static float count = 0;
     int width = 0, height = 0;
     SDL_GetWindowSize(all->window, &width, &height);
     int diagonal = (int)sqrt(width * width + height * height); 
@@ -127,7 +127,7 @@ void	transition(t_all *all)
 		menu_loop_load_texture(all);
         float rayon = diagonal - count; 
         drawOutsideCircle(all->renderer, width / 2, height / 2, (int)rayon, outside, width, height);
-        count += 20; // décroissance directe
+        count += 20;
     }
     else
     {
@@ -199,8 +199,8 @@ void	main_loop(t_all	*all)
 		}
 		SDL_RenderPresent(all->renderer);
 		frame_duration = SDL_GetTicks() - start_time;
-		if (frame_duration < 1000 / 60)
-			SDL_Delay((1000 / 60) - frame_duration);
+		if (frame_duration < 1000 / 80)
+			SDL_Delay((1000 / 80) - frame_duration);
 	}
 	SDL_FreeCursor(cursor);
 	Mix_FreeChunk(son1);

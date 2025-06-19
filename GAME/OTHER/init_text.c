@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:15:01 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 14:38:42 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/19 13:50:40 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 TTF_Font	*init_text(SDL_Renderer *renderer, SDL_Window *window)
 {
-	TTF_Font *font = TTF_OpenFont("/nfs/homes/amblanch/.local/share/fonts/Digitalt.ttf", 40);
+	TTF_Font *font = TTF_OpenFont("FONT/Digitalt.ttf", 40);
 	if (!font) {
     	fprintf(stderr, "Erreur TTF_OpenFont : %s\n", TTF_GetError());
    		SDL_DestroyRenderer(renderer);

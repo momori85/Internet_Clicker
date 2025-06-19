@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:40:18 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 11:31:24 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/19 13:28:46 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,6 @@ void	menu_loop_load_texture(t_all *all)
 			SDL_SetTextureAlphaMod(find_texture(all->texture, "exit_bar"), all->alpha);
 			SDL_RenderCopy(all->renderer, find_texture(all->texture, "exit_bar"), NULL, find_rect(all->rect, "exit_bar"));
 		}
-
 	
 		if (all->status_btn == 1)
 		{
