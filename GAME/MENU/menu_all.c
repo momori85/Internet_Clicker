@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:39:40 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 21:35:15 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/19 22:19:34 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,17 @@ void    menu_all(t_all *all)
 		tmp_pos = find_rect(all->rect, "cochon");
 		if (tmp_pos->y <= 2000)
 			SDL_RenderCopy(all->renderer, find_texture(all->texture, "cochon"), NULL, find_rect(all->rect, "cochon"));
-		if (all->param_theme == 2)
+		if (all->param_theme == 4)
+		{
+			SDL_SetTextureAlphaMod(find_texture(all->texture, "title_menu_dog"), all->alpha);
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "title_menu_dog"), NULL, find_rect(all->rect, "title_menu"));
+		}
+		else if (all->param_theme == 3)
+		{
+			SDL_SetTextureAlphaMod(find_texture(all->texture, "title_menu_troll"), all->alpha);
+			SDL_RenderCopy(all->renderer, find_texture(all->texture, "title_menu_troll"), NULL, find_rect(all->rect, "title_menu"));
+		}
+		else if (all->param_theme == 2)
 		{
 			SDL_SetTextureAlphaMod(find_texture(all->texture, "title_menu_sky"), all->alpha);
 			SDL_RenderCopy(all->renderer, find_texture(all->texture, "title_menu_sky"), NULL, find_rect(all->rect, "title_menu"));

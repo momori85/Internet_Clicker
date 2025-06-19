@@ -6,7 +6,7 @@
 /*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 21:59:01 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/19 22:18:51 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,11 @@ void	init_texture_menu(t_all *all)
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/title.png", all->renderer), "title_menu"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "title_menu"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/title_sky.png", all->renderer), "title_menu_sky"));
-	SDL_SetTextureBlendMode(find_texture(all->texture, "title_menu"), SDL_BLENDMODE_BLEND);
+	SDL_SetTextureBlendMode(find_texture(all->texture, "title_menu_sky"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/title_troll.png", all->renderer), "title_menu_troll"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "title_menu_troll"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/title_dog.png", all->renderer), "title_menu_dog"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "title_menu_dog"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/text_exit.png", all->renderer), "text_exit"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "text_exit"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/text_exit_white.png", all->renderer), "text_exit_white"));
