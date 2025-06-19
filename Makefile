@@ -13,7 +13,11 @@ OTHER = OTHER/ft_free.c \
         OTHER/list_create.c
 
 MENU = MENU/event_loop.c \
-		MENU/menu_loop.c
+		MENU/menu_loop.c \
+		MENU/menu_btn.c \
+		MENU/menu_settings.c \
+		MENU/menu_all.c \
+		MENU/menu_theme_bg.c
 
 TEXTURE = TEXTURE/ft_find_texture.c \
           TEXTURE/init_rect_for_texture.c \

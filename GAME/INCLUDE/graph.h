@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 09:54:05 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 14:39:05 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/19 15:42:46 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,9 @@ t_rectA	*ft_lstnew_rectA(int x, int y , int h, int w, float vx, float vy, char *
 
 void	new_size_texture(t_all *all, int width, int height);
 void	menu_loop_load_texture(t_all *all);
+int    animation_btn(t_all *all, int status_btn, char *name_rect);
+void    menu_settings(t_all *all);
+void    menu_all(t_all *all);
+void    menu_theme_bg(t_all *all);
 
 #endif
