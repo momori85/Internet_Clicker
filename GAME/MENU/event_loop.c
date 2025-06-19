@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event_loop.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:41:31 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 22:04:18 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/19 11:30:35 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void	menu_loop_event(t_all *all)
 						if (isButtonClicked(*find_rect(all->rect, "text_play"), mouse_x, mouse_y))
 						{
 							Mix_PlayChannel(-1, all->click, 0);
-							all->render = TRANSI;
+							all->status_btn_down = 1;
 							init_rect_for_texture_level1(all);
 							init_texture_level1(all);
 							SDL_GetWindowSize(all->window, &width, &height);
@@ -140,17 +140,17 @@ void	menu_loop_event(t_all *all)
 						if (isButtonClicked(*find_rect(all->rect, "text_settings"), mouse_x, mouse_y))
 						{
 							Mix_PlayChannel(-1, all->click, 0);
-							all->menu = SETTINGS_BTN;
+							all->status_btn_down = 2;
 						}
 						if (isButtonClicked(*find_rect(all->rect, "text_save"), mouse_x, mouse_y))
 						{
 							Mix_PlayChannel(-1, all->click, 0);
-							all->menu = SAVE_BTN;
+							all->status_btn_down = 3;
 						}
 						if (isButtonClicked(*find_rect(all->rect, "text_exit"), mouse_x, mouse_y))
 						{
 							Mix_PlayChannel(-1, all->click, 0);
-							all->status = STOP;
+							all->status_btn_down = 4;
 						}
 					}
 				}

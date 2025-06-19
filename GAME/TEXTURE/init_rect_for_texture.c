@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_rect_for_texture.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 22:54:49 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/19 11:14:48 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ void	init_texture(t_all *all)
 
 void	init_rect_for_texture_menu(t_all *all)
 {
-	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(726, 856, 470, 105, "exit_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(726, 856, 470, 120, "exit_bar"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(880, 866, 162, 90, "text_exit"));
-	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(740, 414, 442, 105, "play_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(740, 414, 442, 120, "play_bar"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(869, 424, 182, 90, "text_play"));
-	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(715, 705, 490, 105, "save_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(715, 705, 490, 120, "save_bar"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(869, 715, 184, 90, "text_save"));
-	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(547, 560, 826, 105, "settings_bar"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(547, 560, 826, 120, "settings_bar"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(787, 570, 346, 90, "text_settings"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(597, 11, 728, 309, "title_menu"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(-125, 1820, 2252, 408, "cochon"));
@@ -75,12 +75,20 @@ void	init_texture_menu(t_all *all)
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/cochon.png", all->renderer), "cochon"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/exit_bar.png", all->renderer), "exit_bar"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "exit_bar"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/exit_bar_down.png", all->renderer), "exit_bar_down"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "exit_bar_down"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/play_bar.png", all->renderer), "play_bar"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "play_bar"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/play_bar_down.png", all->renderer), "play_bar_down"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "play_bar_down"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/save_bar.png", all->renderer), "save_bar"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "save_bar"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/save_bar_down.png", all->renderer), "save_bar_down"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "save_bar_down"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/settings_bar.png", all->renderer), "settings_bar"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "settings_bar"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/settings_bar_down.png", all->renderer), "settings_bar_down"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "settings_bar_down"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/title.png", all->renderer), "title_menu"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "title_menu"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/text_exit.png", all->renderer), "text_exit"));

@@ -42,9 +42,11 @@ $(NAME): $(OBJ)
 
 clean:
 	$(RM) $(OBJ)
+	-rm -rf .obj
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) Internet-Clicker.desktop
 
 re: fclean all
 

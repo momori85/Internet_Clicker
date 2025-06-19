@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:08:46 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/18 22:45:47 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/19 11:24:16 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,10 @@ void drawOutsideCircle(SDL_Renderer *renderer, int a, int b, int r, SDL_Color ou
         for (int x = 0; x < width; x++) {
             int dx = x - a;
             int dy = y - b;
-            // Test : si le pixel est à l'extérieur du cercle
             if (dx * dx + dy * dy > r * r) {
                 SDL_SetRenderDrawColor(renderer, outColor.r, outColor.g, outColor.b, outColor.a);
                 SDL_RenderDrawPoint(renderer, x, y);
             }
-            // sinon : ne rien dessiner à l'intérieur
         }
     }
 }
@@ -166,6 +164,8 @@ void	main_loop(t_all	*all)
 	all->menu_theme = 0;
 	all->lvl1_box_shop = 0;
 	all->mouse_power = 1;
+	all->status_btn_down = 0;
+	all->count_time_btn = 0;
 	ft_init_btn(all);
 	while (all->status == RUNNING)
 	{

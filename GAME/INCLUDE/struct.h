@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:53:07 by mlahonta          #+#    #+#             */
-/*   Updated: 2025/06/18 21:57:38 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/19 11:24:02 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,8 @@ typedef struct s_all
 	int					menu_theme;
 	int 				lvl1_box_shop;
 	int					mouse_power;
+	int					status_btn_down;
+	int					count_time_btn;
 	t_rectA				*clicker_rec;
 }		t_all;
 
