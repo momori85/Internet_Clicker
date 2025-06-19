@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event_loop.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:41:31 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 16:51:26 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/19 21:59:33 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,6 +175,8 @@ void	menu_loop_event(t_all *all)
 					{
 						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 1;
+						all->btn_menu.bar_theme = "btn_dark";
+						all->btn_menu.bar_theme_down = "btn_dark_down";
 						all->status_btn_down = 7;
 					}
 					if (isButtonClicked(*find_rect(all->rect, "theme_sky_btn"), mouse_x, mouse_y))
@@ -189,12 +191,16 @@ void	menu_loop_event(t_all *all)
 					{
 						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 3;
+						all->btn_menu.bar_theme = "btn_troll";
+						all->btn_menu.bar_theme_down = "btn_troll_down";
 						all->status_btn_down = 9;
 					}
 					if (isButtonClicked(*find_rect(all->rect, "theme_dog_btn"), mouse_x, mouse_y))
 					{
 						Mix_PlayChannel(-1, all->click, 0);
 						all->param_theme = 4;
+						all->btn_menu.bar_theme = "btn_dog";
+						all->btn_menu.bar_theme_down = "btn_dog_down";
 						all->status_btn_down = 10;
 					}
 				}

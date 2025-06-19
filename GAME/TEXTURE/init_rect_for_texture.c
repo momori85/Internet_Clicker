@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_rect_for_texture.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 16:27:26 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/19 21:59:01 by amaury           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,25 @@ void	init_texture_menu(t_all *all)
 	SDL_SetTextureBlendMode(find_texture(all->texture, "btn_sky"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/btn_sky_down.png", all->renderer), "btn_sky_down"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "btn_sky_down"), SDL_BLENDMODE_BLEND);
+
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/btn_troll.png", all->renderer), "btn_troll"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "btn_troll"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/btn_troll_down.png", all->renderer), "btn_troll_down"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "btn_troll_down"), SDL_BLENDMODE_BLEND);
+
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/btn_dog.png", all->renderer), "btn_dog"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "btn_dog"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/btn_dog_down.png", all->renderer), "btn_dog_down"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "btn_dog_down"), SDL_BLENDMODE_BLEND);
+
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/btn_dark.png", all->renderer), "btn_dark"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "btn_dark"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/btn_dark_down.png", all->renderer), "btn_dark_down"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "btn_dark_down"), SDL_BLENDMODE_BLEND);
+	
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/title.png", all->renderer), "title_menu"));
+	SDL_SetTextureBlendMode(find_texture(all->texture, "title_menu"), SDL_BLENDMODE_BLEND);
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/title_sky.png", all->renderer), "title_menu_sky"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "title_menu"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/text_exit.png", all->renderer), "text_exit"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "text_exit"), SDL_BLENDMODE_BLEND);
