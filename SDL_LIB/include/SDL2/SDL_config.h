@@ -102,8 +102,8 @@
 #define HAVE_MEMMOVE 1
 #define HAVE_MEMCMP 1
 #define HAVE_WCSLEN 1
-#define HAVE_WCSLCPY 1
-#define HAVE_WCSLCAT 1
+/* #undef HAVE_WCSLCPY */
+/* #undef HAVE_WCSLCAT */
 /* #undef HAVE__WCSDUP */
 #define HAVE_WCSDUP 1
 #define HAVE_WCSSTR 1
@@ -114,8 +114,8 @@
 #define HAVE_WCSNCASECMP 1
 /* #undef HAVE__WCSNICMP */
 #define HAVE_STRLEN 1
-#define HAVE_STRLCPY 1
-#define HAVE_STRLCAT 1
+/* #undef HAVE_STRLCPY */
+/* #undef HAVE_STRLCAT */
 /* #undef HAVE__STRREV */
 /* #undef HAVE__STRUPR */
 /* #undef HAVE__STRLWR */
@@ -234,7 +234,7 @@
 #define HAVE_IMMINTRIN_H 1
 #define HAVE_LIBUDEV_H 1
 /* #undef HAVE_LIBUSB */
-#define HAVE_LIBSAMPLERATE_H 1
+/* #undef HAVE_LIBSAMPLERATE_H */
 #define HAVE_LIBDECOR_H 1
 /* #undef HAVE_LSXINTRIN_H */
 /* #undef HAVE_LASXINTRIN_H */
@@ -293,8 +293,8 @@
 /* #undef SDL_AUDIO_DRIVER_FUSIONSOUND */
 /* #undef SDL_AUDIO_DRIVER_FUSIONSOUND_DYNAMIC */
 /* #undef SDL_AUDIO_DRIVER_HAIKU */
-#define SDL_AUDIO_DRIVER_JACK 1
-#define SDL_AUDIO_DRIVER_JACK_DYNAMIC "libjack.so.0"
+/* #undef SDL_AUDIO_DRIVER_JACK */
+/* #undef SDL_AUDIO_DRIVER_JACK_DYNAMIC */
 /* #undef SDL_AUDIO_DRIVER_NACL */
 /* #undef SDL_AUDIO_DRIVER_NAS */
 /* #undef SDL_AUDIO_DRIVER_NAS_DYNAMIC */
@@ -302,8 +302,8 @@
 /* #undef SDL_AUDIO_DRIVER_OPENSLES */
 #define SDL_AUDIO_DRIVER_OSS 1
 /* #undef SDL_AUDIO_DRIVER_PAUDIO */
-#define SDL_AUDIO_DRIVER_PIPEWIRE 1
-#define SDL_AUDIO_DRIVER_PIPEWIRE_DYNAMIC "libpipewire-0.3.so.0"
+/* #undef SDL_AUDIO_DRIVER_PIPEWIRE */
+/* #undef SDL_AUDIO_DRIVER_PIPEWIRE_DYNAMIC */
 #define SDL_AUDIO_DRIVER_PULSEAUDIO 1
 #define SDL_AUDIO_DRIVER_PULSEAUDIO_DYNAMIC "libpulse.so.0"
 /* #undef SDL_AUDIO_DRIVER_QSA */
@@ -491,9 +491,9 @@
 /* #undef SDL_LIBUSB_DYNAMIC */
 
 /* Enable dynamic libsamplerate support */
-#define SDL_LIBSAMPLERATE_DYNAMIC "libsamplerate.so.0"
+/* #undef SDL_LIBSAMPLERATE_DYNAMIC */
 
 /* Libdecor get min/max content size functions */
-#define SDL_HAVE_LIBDECOR_GET_MIN_MAX 1
+/* #undef SDL_HAVE_LIBDECOR_GET_MIN_MAX */
 
 #endif /* SDL_config_h_ */

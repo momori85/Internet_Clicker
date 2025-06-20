@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   menu_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:39:40 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 22:19:34 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/20 10:31:46 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void    menu_all(t_all *all)
 			all->menu = SAVE_BTN;
 		if (animation_btn(all, 4, "exit_bar") == 1)
 			all->status = STOP;
-	
+		SDL_RenderCopy(all->renderer, find_texture(all->texture, "return"), NULL, find_rect(all->rect, "return"));
 		if (all->status_btn == 1)
 		{
 			SDL_SetTextureAlphaMod(find_texture(all->texture, "text_play_white"), all->alpha);

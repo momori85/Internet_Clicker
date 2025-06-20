@@ -6,7 +6,7 @@
 /*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:37:26 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 16:58:28 by amblanch         ###   ########.fr       */
+/*   Updated: 2025/06/20 10:32:01 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void    menu_settings(t_all *all)
 {
     if (all->menu == SETTINGS_BTN)
 	{
+        SDL_RenderCopy(all->renderer, find_texture(all->texture, "return"), NULL, find_rect(all->rect, "return"));
 		if (all->btn_menu.settings_btn == 1)
         {
             if (animation_btn_settings(all, 5, "settings_theme") == 0)

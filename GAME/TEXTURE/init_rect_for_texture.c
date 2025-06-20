@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_rect_for_texture.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaury <amaury@student.42.fr>              +#+  +:+       +#+        */
+/*   By: amblanch <amblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 13:12:59 by amblanch          #+#    #+#             */
-/*   Updated: 2025/06/19 22:18:51 by amaury           ###   ########.fr       */
+/*   Updated: 2025/06/20 10:32:53 by amblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	init_rect_for_texture_menu(t_all *all)
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(787, 570, 346, 90, "text_settings"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(597, 11, 728, 309, "title_menu"));
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(-125, 1820, 2252, 408, "cochon"));
+	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(20, 20, 50, 50, "return"));
 	//settings
 		//bar
 	ft_lstadd_back_rect(&all->rect, ft_lstnew_rect(40, 100, 826, 105, "settings_theme"));
@@ -80,7 +81,7 @@ void	init_rect_for_texture_menu(t_all *all)
 void	init_texture_menu(t_all *all)
 {
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/cochon.png", all->renderer), "cochon"));
-	
+	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/return.png", all->renderer), "return"));
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/menu_bar.png", all->renderer), "menu_bar"));
 	SDL_SetTextureBlendMode(find_texture(all->texture, "menu_bar"), SDL_BLENDMODE_BLEND);
 	ft_lstadd_back_texture(&all->texture, ft_lstnew_texture(LoadTexture("GAME/TEXTURE/IMAGE/MENU/menu_bar_down.png", all->renderer), "menu_bar_down"));
